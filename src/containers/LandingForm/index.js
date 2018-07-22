@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { fetchEvents } from '../../actions';
 import { connect } from 'react-redux';
 
+import { urlBuilder } from '../helper';
+
 export class LandingForm extends Component {
   constructor(props){
     super(props);
@@ -18,13 +20,19 @@ export class LandingForm extends Component {
     });
   }
 
+  handleSubmit = (event) => {
+    event.preventDefault();
+    const url = urlBuilder(this.state);
+    this.props.fetchEvents(url);
+  }
+  
   render(){
     return (
       <div>
         <header className="App-header">
           <h1 className="App-title">Scene-It</h1>
         </header>
-        <form onSubmit={this.props.fetchEvents}className="landing-form">
+        <form onSubmit={this.handleSubmit}className="landing-form">
           <label htmlFor="location"></label>
           <input id="location" placeholder="location" onChange={this.handleChange} />
           <label htmlFor="keywords" /> 
