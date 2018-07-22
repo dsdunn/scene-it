@@ -16,11 +16,12 @@ export class LandingForm extends Component {
           <h1 className="App-title">Scene-It</h1>
         </header>
         <form className="landing-form">
-          <label for="location"></label>
+          <label htmlFor="location"></label>
           <input id="location" placeholder="location" />
-          <label for="keywords" /> 
+          <label htmlFor="keywords" /> 
+          <input id="keywords" placeholder="keywords" />
         </form>
       </div>
-    )
+    );
   }
 }
