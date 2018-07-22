@@ -10,5 +10,5 @@ export const hasErrored = (bool) => ({
 
 export const eventsFetchSuccess = (events) => ({
   type: 'EVENTS_FETCH_SUCCESS',
-  eventFetchSucess: events
+  events: events
 });

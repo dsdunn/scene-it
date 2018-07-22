@@ -7,6 +7,7 @@ export const fetchEvents = (url) => {
       const response = await fetch(url);
       const rawData = response.json();
       dispatch(eventsFetchSuccess(rawData));
+      dispatch(isLoading(false));
       console.log(rawData);
     } catch (error) {
       throw Error(error.statusText);

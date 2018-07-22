@@ -15,7 +15,7 @@ export class LandingForm extends Component {
         <header className="App-header">
           <h1 className="App-title">Scene-It</h1>
         </header>
-        <form className="landing-form">
+        <form onSubmit={this.props.fetchEvents}className="landing-form">
           <label htmlFor="location"></label>
           <input id="location" placeholder="location" />
           <label htmlFor="keywords" /> 
