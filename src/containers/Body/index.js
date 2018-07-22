@@ -3,8 +3,20 @@ import { connect } from 'react-redux';
 import { EventCard } from '../EventCard';
 
 const Body = (props) => {
-  return props.events.map(event => <EventCard key={event.id} event={event}/>)
-  
+
+  const eventList = () => props.events.map(event => <EventCard event={event}/>)
+
+  return (
+    <div className="Body">
+      <div className="event-list">
+        {eventList()}
+      </div>
+      <div className="map-div">
+      </div>
+      <div className="details">
+      </div>
+    </div>
+    )
 }
 
 export const mapStateToProps = (state) => ({
