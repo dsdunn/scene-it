@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { fetchEvents } from '../../actions';
+import { connect } from 'react-redux';
 
 export class LandingForm extends Component {
   constructor(props){
@@ -9,6 +11,13 @@ export class LandingForm extends Component {
     };
   }
 
+  handleChange = (event) => {
+    const { id, value } = event.target;
+    this.setState({
+      [id]:value
+    });
+  }
+
   render(){
     return (
       <div>
@@ -17,11 +26,17 @@ export class LandingForm extends Component {
         </header>
         <form onSubmit={this.props.fetchEvents}className="landing-form">
           <label htmlFor="location"></label>
-          <input id="location" placeholder="location" />
+          <input id="location" placeholder="location" onChange={this.handleChange} />
           <label htmlFor="keywords" /> 
-          <input id="keywords" placeholder="keywords" />
+          <input id="keywords" placeholder="keywords" onChange={this.handleChange} />
         </form>
       </div>
     );
   }
 }
+
+const mapDispatchToProps = (dispatch) => ({
+  fetchEvents: (url) => dispatch(fetchEvents(url))
+});
+
+connect(null, mapDispatchToProps)(LandingForm)

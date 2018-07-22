@@ -10,8 +10,8 @@ export const fetchEvents = (url) => {
       dispatch(isLoading(false));
       console.log(rawData);
     } catch (error) {
-      throw Error(error.statusText);
       dispatch(hasErrored(true));
+      throw Error(error.statusText);
     }
   };
 };
