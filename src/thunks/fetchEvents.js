@@ -5,13 +5,15 @@ export const fetchEvents = (url) => {
     try {
       dispatch(isLoading(true));
       const response = await fetch(url);
-      const rawData = response.json();
-      dispatch(eventsFetchSuccess(rawData));
+      if (!response.ok) {
+        throw Error(response.statusText);
+      }
       dispatch(isLoading(false));
-      console.log(rawData);
+      const result = await response.json();
+      dispatch(eventsFetchSuccess(result));
+      console.log(result);
     } catch (error) {
       dispatch(hasErrored(true));
-      throw Error(error.statusText);
     }
   };
 };

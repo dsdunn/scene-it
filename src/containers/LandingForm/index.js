@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { fetchEvents } from '../../actions';
 import { connect } from 'react-redux';
 
-import { urlBuilder } from '../helper';
+import { urlBuilder } from '../../helper';
+import { fetchEvents } from '../../thunks/fetchEvents';
 
 export class LandingForm extends Component {
   constructor(props){
@@ -25,7 +25,7 @@ export class LandingForm extends Component {
     const url = urlBuilder(this.state);
     this.props.fetchEvents(url);
   }
-  
+
   render(){
     return (
       <div>
@@ -37,6 +37,7 @@ export class LandingForm extends Component {
           <input id="location" placeholder="location" onChange={this.handleChange} />
           <label htmlFor="keywords" /> 
           <input id="keywords" placeholder="keywords" onChange={this.handleChange} />
+          <button>Get Events</button>
         </form>
       </div>
     );
@@ -47,4 +48,4 @@ const mapDispatchToProps = (dispatch) => ({
   fetchEvents: (url) => dispatch(fetchEvents(url))
 });
 
-connect(null, mapDispatchToProps)(LandingForm)
+export default connect(null, mapDispatchToProps)(LandingForm);

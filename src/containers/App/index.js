@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Route, withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-import { LandingForm } from '../LandingForm';
+import  LandingForm  from '../LandingForm';
 
 import './App.css';
 

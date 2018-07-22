@@ -8,7 +8,7 @@ export const hasErrored = (bool) => ({
   hasErrored: bool
 });
 
-export const fetchEvents = (events) => ({
+export const eventsFetchSuccess = (events) => ({
   type: 'EVENTS_FETCH_SUCCESS',
   events: events
 });
