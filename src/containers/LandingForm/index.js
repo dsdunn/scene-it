@@ -24,6 +24,7 @@ export class LandingForm extends Component {
     event.preventDefault();
     const url = urlBuilder(this.state);
     this.props.fetchEvents(url);
+    this.props.history.push('/results');
   }
 
   render(){
