@@ -29,6 +29,10 @@ export class LandingForm extends Component {
     this.props.history.push('/results');
   }
 
+  useCurrent = (event) => {
+    
+  }
+
   render(){
     return (
       <div>
@@ -36,6 +40,8 @@ export class LandingForm extends Component {
           <h1 className="App-title">Scene-It</h1>
         </header>
         <form onSubmit={this.handleSubmit}className="landing-form">
+          <label htmlFor="use-current-location"/>
+          <input type="checkbox" id="use-current-location" onChange={this.useCurrent}/>
           <label htmlFor="location"></label>
           <input id="location" placeholder="location" onChange={this.handleChange} />
           <label htmlFor="keywords" /> 

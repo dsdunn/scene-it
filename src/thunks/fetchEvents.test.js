@@ -41,7 +41,7 @@ describe('fetchEvents', () => {
     expect(mockDispatch).toBeCalledWith(isLoading(false));
   })
 
-  it.only('should dispatch eventsFetchSuccess if there are no errors', async () => {
+  it('should dispatch eventsFetchSuccess if there are no errors', async () => {
     const mockEvents = {events: {event: {one: 'event'}}};
 
     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({

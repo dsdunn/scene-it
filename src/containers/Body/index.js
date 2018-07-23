@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { EventCard } from '../EventCard';
+import { EventCard } from '../../components/EventCard';
 import  Map  from '../MapDiv';
 import { mapKey } from '../../apiKey';
 
