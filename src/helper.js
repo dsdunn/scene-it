@@ -1,7 +1,7 @@
 import {apiKey} from './apiKey';
 
 export const urlBuilder = (state) => {
-  let { location, keywords } = state;
+  let { location, keywords } = {...state};
   if (typeof location != 'string') {
     location = location.lat + ', ' + location.lng;
     console.log(location)

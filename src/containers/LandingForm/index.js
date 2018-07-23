@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import './LandingForm.css'
 
 import { urlBuilder } from '../../helper';
 import { fetchEvents } from '../../thunks/fetchEvents';
@@ -39,7 +40,7 @@ export class LandingForm extends Component {
     if(navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(setLocation);
       this.setState({
-        useCurrent: true
+        useCurrent: !this.state.useCurrent
       })
     }
   }
@@ -51,15 +52,19 @@ export class LandingForm extends Component {
           <h1 className="App-title">Scene-It</h1>
         </header>
         <form onSubmit={this.handleSubmit}className="landing-form">
-          <label htmlFor="use-current-location">Use my current location</label>
-          <input type="checkbox" id="use-current-location" onChange={this.useCurrent}/>
-          <label htmlFor="location"></label>
-          {!this.state.useCurrent && 
-            <input id="location" placeholder="location" onChange={this.handleChange} />
-          }
-          <label htmlFor="keywords" /> 
-          <input id="keywords" placeholder="keywords" onChange={this.handleChange} />
-          <button>Get Events</button>
+          <div>
+            <input type="checkbox" id="use-current-location" onChange={this.useCurrent}/>
+            <label htmlFor="use-current-location">Use my current location</label>
+          </div>
+          <div className="query-info">
+            <label htmlFor="location"></label>
+            {!this.state.useCurrent && 
+              <input id="location" placeholder="location" onChange={this.handleChange} />
+            }
+            <label htmlFor="keywords" /> 
+            <input id="keywords" placeholder="keywords" onChange={this.handleChange} />
+            <button>Get Events</button>
+          </div>
         </form>
       </div>
     );

@@ -2,7 +2,7 @@ import { isLoading, hasErrored, locationFetchSuccess } from '../actions';
 import { mapKey } from '../apiKey';
 
 export const fetchLocation = (location) => {
-  const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${location}&key=${mapKey}`
+  const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${location}&within=10&key=${mapKey}`
   return async (dispatch) => {
     try{
       dispatch(isLoading(true));
