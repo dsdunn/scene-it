@@ -3,7 +3,7 @@ export const isLoading = (bool) => ({
   isLoading: bool
 });
 
-export const hasErrored = (bool) => ({
+export const hasErrored = (bool = false) => ({
   type: 'HAS_ERRORED',
   hasErrored: bool
 });
