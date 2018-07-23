@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { withScriptjs, withGoogleMap, GoogleMap, Marker } from 'react-google-maps';
 
 
@@ -7,13 +8,18 @@ class Map extends Component {
     super(props);
   }
   render(){
+    const { lat, lng } = this.props.coordinates
     return(
       <GoogleMap 
-        defaultZoom={8}
-        defaultCenter={{lat: -34.397, lng: 150.644}}
+        defaultZoom={12}
+        defaultCenter={{lat, lng}}
       />
     )
   }
 }
 
-export default withScriptjs(withGoogleMap(Map))
+const mapStateToProps = (state) => ({
+  coordinates: state.location
+})
+
+export default withScriptjs(withGoogleMap(connect(mapStateToProps)(Map)))

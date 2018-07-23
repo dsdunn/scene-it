@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import { urlBuilder } from '../../helper';
 import { fetchEvents } from '../../thunks/fetchEvents';
+import { fetchLocation } from '../../thunks/fetchLocation';
 
 export class LandingForm extends Component {
   constructor(props){
@@ -23,6 +24,7 @@ export class LandingForm extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     const url = urlBuilder(this.state);
+    this.props.fetchLocation(this.state.location);
     this.props.fetchEvents(url);
     this.props.history.push('/results');
   }
@@ -46,7 +48,8 @@ export class LandingForm extends Component {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchEvents: (url) => dispatch(fetchEvents(url))
+  fetchEvents: (url) => dispatch(fetchEvents(url)),
+  fetchLocation: (location) => dispatch(fetchLocation(location))
 });
 
 export default connect(null, mapDispatchToProps)(LandingForm);
