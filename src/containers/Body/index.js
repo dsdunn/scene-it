@@ -10,9 +10,6 @@ const Body = (props) => {
 
   return (
     <div className="Body">
-      <div className="event-list">
-        {eventList()}
-      </div>
       <div className="map-div">
         <Map 
           isMarkerShown
@@ -21,6 +18,9 @@ const Body = (props) => {
           containerElement={<div style={{ height: `400px` }} />}
           mapElement={<div style={{ height: `100%` }} />}
         />
+      <div className="event-list">
+        {eventList()}
+      </div>
       </div>
       <div className="details">
       </div>

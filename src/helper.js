@@ -1,13 +1,13 @@
 import {apiKey} from './apiKey';
 
 export const urlBuilder = (state) => {
-  let { location, keywords } = {...state};
+  let { location, keywords } = state;
   if (typeof location != 'string') {
     location = location.lat + ', ' + location.lng;
     console.log(location)
   }
   const corsAnywhereUrl = 'https://cors-anywhere.herokuapp.com/'
-  return `${corsAnywhereUrl}http://api.eventful.com/json/events/search?app_key=${apiKey}&keywords=${keywords}&location=${location}&date=Today&c=music`;
+  return `${corsAnywhereUrl}http://api.eventful.com/json/events/search?app_key=${apiKey}&keywords=${keywords}&location=${location}&within=20&date=Today`;
 };
 
 export const dataCleaner = (events) => {
