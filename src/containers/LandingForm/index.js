@@ -4,13 +4,15 @@ import { connect } from 'react-redux';
 import { urlBuilder } from '../../helper';
 import { fetchEvents } from '../../thunks/fetchEvents';
 import { fetchLocation } from '../../thunks/fetchLocation';
+import { locationFetchSuccess } from '../../actions';
 
 export class LandingForm extends Component {
   constructor(props){
     super(props);
     this.state = {
       location: '',
-      keywords: ''
+      keywords: '',
+      useCurrent: false
     };
   }
 
@@ -30,7 +32,16 @@ export class LandingForm extends Component {
   }
 
   useCurrent = (event) => {
-    
+    const setLocation = (position) => {
+      const coords = {lat: position.coords.latitude, lng: position.coords.longitude};
+      this.props.setLocation(coords)
+    }
+    if(navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(setLocation);
+      this.setState({
+        useCurrent: true
+      })
+    }
   }
 
   render(){
@@ -40,10 +51,12 @@ export class LandingForm extends Component {
           <h1 className="App-title">Scene-It</h1>
         </header>
         <form onSubmit={this.handleSubmit}className="landing-form">
-          <label htmlFor="use-current-location"/>
+          <label htmlFor="use-current-location">Use my current location</label>
           <input type="checkbox" id="use-current-location" onChange={this.useCurrent}/>
           <label htmlFor="location"></label>
-          <input id="location" placeholder="location" onChange={this.handleChange} />
+          {!this.state.useCurrent && 
+            <input id="location" placeholder="location" onChange={this.handleChange} />
+          }
           <label htmlFor="keywords" /> 
           <input id="keywords" placeholder="keywords" onChange={this.handleChange} />
           <button>Get Events</button>
@@ -55,7 +68,8 @@ export class LandingForm extends Component {
 
 const mapDispatchToProps = (dispatch) => ({
   fetchEvents: (url) => dispatch(fetchEvents(url)),
-  fetchLocation: (location) => dispatch(fetchLocation(location))
+  fetchLocation: (location) => dispatch(fetchLocation(location)),
+  setLocation: (location) => dispatch(locationFetchSuccess(location))
 });
 
 export default connect(null, mapDispatchToProps)(LandingForm);
