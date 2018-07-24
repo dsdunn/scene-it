@@ -13,7 +13,6 @@ export const fetchEvents = (url) => {
       const result = await response.json();
       const cleanData = dataCleaner(result.events.event);
       dispatch(eventsFetchSuccess(cleanData));
-      // console.log(result.events.event);
     } catch (error) {
       dispatch(hasErrored(true));
     }

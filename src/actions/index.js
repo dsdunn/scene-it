@@ -12,3 +12,8 @@ export const eventsFetchSuccess = (events) => ({
   type: 'EVENTS_FETCH_SUCCESS',
   events: events
 });
+
+export const locationFetchSuccess = (location) => ({
+  type: 'LOCATION_FETCH_SUCCESS',
+  location: location
+});

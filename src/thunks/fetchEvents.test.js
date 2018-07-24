@@ -1,5 +1,9 @@
 import  { fetchEvents } from './fetchEvents';
 import { isLoading, hasErrored, eventsFetchSuccess } from '../actions';
+import { dataCleaner } from '../helper';
+
+jest.mock('../helper')
+
 
 describe('fetchEvents', () => {
   let mockUrl;
@@ -41,16 +45,15 @@ describe('fetchEvents', () => {
     expect(mockDispatch).toBeCalledWith(isLoading(false));
   })
 
-  it.only('should dispatch eventsFetchSuccess if there are no errors', async () => {
-    const mockEvents = {events: {event: {one: 'event'}}};
+  it('should dispatch eventsFetchSuccess if there are no errors', async () => {
+    const mockEvents = {events: {event: 'one'}};
 
     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
       ok: true,
       json: () => Promise.resolve(mockEvents)
       })
     )
-    
-
+    const dataCleaner = jest.fn()
     const thunk = fetchEvents(mockUrl);
     await thunk(mockDispatch);
 

@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { EventCard } from '../EventCard';
+import { EventCard } from '../../components/EventCard';
+import  Map  from '../MapDiv';
+import { mapKey } from '../../apiKey';
 
 const Body = (props) => {
 
@@ -8,15 +10,22 @@ const Body = (props) => {
 
   return (
     <div className="Body">
+      <div className="map-div">
+        <Map 
+          isMarkerShown
+          googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${mapKey}&v=3.exp&libraries=geometry,drawing,places`}
+          loadingElement={<div style={{ height: `100%` }} />}
+          containerElement={<div style={{ height: `400px` }} />}
+          mapElement={<div style={{ height: `100%` }} />}
+        />
       <div className="event-list">
         {eventList()}
       </div>
-      <div className="map-div">
       </div>
       <div className="details">
       </div>
     </div>
-    )
+  );
 }
 
 export const mapStateToProps = (state) => ({
