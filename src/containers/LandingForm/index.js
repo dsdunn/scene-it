@@ -24,10 +24,12 @@ export class LandingForm extends Component {
     });
   }
 
-  handleSubmit = (event) => {
+  handleSubmit = async (event) => {
     event.preventDefault();
-    const url = urlBuilder(this.state);
-    this.props.fetchLocation(this.state.location);
+    const url = urlBuilder({...this.state, location: this.props.coords});
+    if (this.state.location.length) {
+      this.props.fetchLocation(this.state.location);
+    }
     this.props.fetchEvents(url);
     this.props.history.push('/results');
   }
@@ -71,10 +73,14 @@ export class LandingForm extends Component {
   }
 }
 
+const mapStateToProps = state => ({
+  coords: state.location
+})
+
 const mapDispatchToProps = (dispatch) => ({
   fetchEvents: (url) => dispatch(fetchEvents(url)),
   fetchLocation: (location) => dispatch(fetchLocation(location)),
   setLocation: (location) => dispatch(locationFetchSuccess(location))
 });
 
-export default connect(null, mapDispatchToProps)(LandingForm);
+export default connect(mapStateToProps, mapDispatchToProps)(LandingForm);

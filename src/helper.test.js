@@ -4,7 +4,7 @@ import { mockRawEvents } from './mockData';
 
 describe('urlBuilder', () => {
   it('should put together a url with location and keywords', () => {
-    const expected = `https://cors-anywhere.herokuapp.com/http://api.eventful.com/json/events/search?app_key=${apiKey}&keywords=jazz&location=Denver&date=Today`;
+    const expected = `https://cors-anywhere.herokuapp.com/http://api.eventful.com/json/events/search?app_key=${apiKey}&keywords=jazz&location=Denver&within=20&date=Today`;
     const actual = helper.urlBuilder({location: 'Denver', keywords: 'jazz'});
 
     expect(actual).toEqual(expected);
