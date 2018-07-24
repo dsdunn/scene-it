@@ -12,7 +12,10 @@ class Map extends Component {
     return this.props.events.map(event => {  
       console.log(event)
       return (
-        <Marker position={{lat: event.lat,lng: event.lng}}/>
+        <Marker 
+        position={{lat: event.lat,lng: event.lng}}
+        
+        />
         )
     })
   }
