@@ -26,18 +26,22 @@ export class LandingForm extends Component {
 
   handleSubmit = async (event) => {
     event.preventDefault();
-    const url = urlBuilder({...this.state, location: this.props.coords});
     if (this.state.location.length) {
-      this.props.fetchLocation(this.state.location);
+      await this.props.fetchLocation(this.state.location);
     }
+    const url = urlBuilder({...this.state, location: this.props.location});
+    console.log(url)
     this.props.fetchEvents(url);
     this.props.history.push('/results');
   }
 
   useCurrent = (event) => {
-    const setLocation = (position) => {
+    const setLocation = async (position) => {
       const coords = {lat: position.coords.latitude, lng: position.coords.longitude};
-      this.props.setLocation(coords)
+      await this.props.setLocation(coords)
+      this.setState({
+        location: this.props.location
+      })
     }
     if(navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(setLocation);
@@ -74,7 +78,7 @@ export class LandingForm extends Component {
 }
 
 const mapStateToProps = state => ({
-  coords: state.location
+  location: state.location
 })
 
 const mapDispatchToProps = (dispatch) => ({
