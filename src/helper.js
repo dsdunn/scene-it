@@ -15,8 +15,8 @@ export const dataCleaner = (events) => {
   return events.map(event => ({
     cityName: event.city_name,
     eventId: event.id,
-    latitude: event.latitude,
-    longitude: event.longitude,
+    lat: parseFloat(event.latitude),
+    lng: parseFloat(event.longitude),
     performers: event.performers,
     postalCode: event.postal_code,
     region: event.region_name,
