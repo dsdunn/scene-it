@@ -1,21 +1,22 @@
 import {apiKey} from './apiKey';
 
 export const urlBuilder = (state) => {
-  let { location, keywords } = state;
+  let { location } = state;
+  const keywords = state.keywords.length ? `keywords=tag:${state.keywords} || live+music || comedy&within=20` : 'keywords=live+music || comedy';
   if (typeof location != 'string') {
     location = location.lat + ', ' + location.lng;
     console.log(location)
   }
   const corsAnywhereUrl = 'https://cors-anywhere.herokuapp.com/'
-  return `${corsAnywhereUrl}http://api.eventful.com/json/events/search?app_key=${apiKey}&keywords=${keywords}&location=${location}&within=20&date=Today`;
+  return `${corsAnywhereUrl}http://api.eventful.com/json/events/search?app_key=${apiKey}&${keywords}&location=${location}&within=20&date=Today&page_size=20`;
 };
 
 export const dataCleaner = (events) => {
   return events.map(event => ({
     cityName: event.city_name,
     eventId: event.id,
-    latitude: event.latitude,
-    longitude: event.longitude,
+    lat: parseFloat(event.latitude),
+    lng: parseFloat(event.longitude),
     performers: event.performers,
     postalCode: event.postal_code,
     region: event.region_name,
