@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { EventCard } from '../../components/EventCard';
 import  Map  from '../MapDiv';
 import { mapKey } from '../../apiKey';
+import './Body.css';
 
 const Body = (props) => {
 
@@ -15,7 +16,7 @@ const Body = (props) => {
           isMarkerShown
           googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${mapKey}&v=3.exp&libraries=geometry,drawing,places`}
           loadingElement={<div style={{ height: `100%` }} />}
-          containerElement={<div style={{ height: `400px` }} />}
+          containerElement={<div style={{ height: `60vh`, width: '60%' }} />}
           mapElement={<div style={{ height: `100%` }} />}
         />
       <div className="event-list">
