@@ -1,6 +1,7 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-export const Details = (event) => {
+export const Details = (props) => {
   const {
     cityName, 
     performers, 
@@ -12,7 +13,7 @@ export const Details = (event) => {
     address, 
     venueName, 
     venueUrl
-  } = event;
+  } = props.selectedEvent ? props.selectedEvent : 'shit';
 
   return (
       <div className="details">
@@ -27,3 +28,9 @@ export const Details = (event) => {
       </div>
     )
 }
+
+export const mapStateToProps = (state) => ({
+  selectedEvent: state.selectedEvent
+})
+
+export default connect(mapStateToProps)(Details);

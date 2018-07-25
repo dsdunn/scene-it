@@ -5,11 +5,11 @@ import  Map  from '../MapDiv';
 import { mapKey } from '../../apiKey';
 import './Body.css';
 import {selectEvent} from '../../actions';
-import {Details} from '../../components/Details';
+import Details from '../../components/Details';
 
 const Body = (props) => {
 
-  const eventList = () => props.events.map(event => <EventCard event={event} selectEvent={props.selectEvent}/>)
+  const eventList = () => props.events.map(event => <EventCard event={event} selectEvent={props.selectEvent} selectedEvent={props.selectedEvent}/>)
 
   return (
     <div className="Body">
@@ -32,7 +32,8 @@ const Body = (props) => {
 
 export const mapStateToProps = (state) => ({
   events: state.events,
-  selectEvent: state.selectEvent
+  selectEvent: state.selectEvent,
+  selectedEvent: state.selectedEvent
 })
 
 export const mapDispatchToProps = (dispatch) => ({
