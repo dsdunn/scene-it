@@ -12,7 +12,7 @@ export const events = (state = [], action) => {
 export const selectedEvent = (state = null, action) => {
   switch (action.type) {
     case 'SELECT_EVENT':
-      return action.id;
+      return action.event;
     case 'UNSELECT_EVENT':
       return null;
     default: 

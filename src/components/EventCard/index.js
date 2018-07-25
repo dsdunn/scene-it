@@ -1,12 +1,10 @@
 import React from 'react';
 
-export const EventCard = ({event}) => {
+export const EventCard = ({event, selectEvent}) => {
   return (
-    <div id={event.id}>
-      <h4>{event.title}</h4>
-      <p>{event.venueName}</p>
-      <p>{event.address}</p> 
-      <p>{event.cityName}, {event.region} {event.postalCode}</p>
+    <div className="event-card" id={event.id} onClick={() => selectEvent(event)}>
+      <h4 className="card-title">{event.title}</h4>
+      <p className="card-venue">{event.venueName}</p>
     </div>
     )
 }

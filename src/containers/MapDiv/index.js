@@ -13,22 +13,15 @@ class Map extends Component {
     }
   }
 
-  showInfo = (state) => {
-    this.props.selectEvent(state.id)
-      this.setState({
-        infoPosition: state.position,
-        currentId: state.id
-      })      
-   
-    console.log(state)
+  showInfo = (event) => {
+    if (event.eventId === this.props.selectedEvent) {
+      this.props.unselectEvent();
+      this.setState({one: 'two'}) 
+    } else {
+      this.props.selectEvent(event);
+      this.setState({one: 'two'})
+    }
   }
-
-  // hideInfo = () => {
-  //   this.setState({
-  //     infoPosition: null
-  //   })
-  //   console.log('hide')
-  // }
 
   markers = () => {
     return this.props.events.map(event => {  
@@ -36,10 +29,8 @@ class Map extends Component {
         <Marker 
         position={{lat: event.lat,lng: event.lng}}
         title={event.title}
-        onClick={() => this.showInfo({
-          id:event.eventId, 
-          position: {lat: event.lat, lng: event.lng}
-        })}
+        onClick={() => this.showInfo( event
+        )}
         
         />
       )
@@ -54,9 +45,9 @@ class Map extends Component {
         defaultCenter={{lat, lng}}
       >
         {this.markers()}
-        {this.state.infoPosition && 
-          <InfoWindow position={this.state.infoPosition}>
-            <h2>{this.state.currentId}</h2>
+        {this.props.selectedEvent && 
+          <InfoWindow position={{lat: this.props.selectedEvent.lat, lng: this.props.selectedEvent.lng}}>
+            <h2>{this.props.selectEvent.title}</h2>
           </InfoWindow>
         }
       </GoogleMap>
@@ -72,7 +63,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   selectEvent: (id) => dispatch(selectEvent(id)),
-  unselectEvent: (id) => dispatch(unselectEvent(id))
+  unselectEvent: () => dispatch(unselectEvent())
 })
 
 export default withScriptjs(withGoogleMap(connect(mapStateToProps,mapDispatchToProps)(Map)))
