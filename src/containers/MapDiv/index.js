@@ -8,13 +8,18 @@ class Map extends Component {
     super(props);
   }
 
+  showInfo = (id) => {
+    console.log(id)
+  }
+
   markers = () => {
     return this.props.events.map(event => {  
-      console.log(event)
       return (
         <Marker 
         position={{lat: event.lat,lng: event.lng}}
-        
+        title={event.title}
+        onMouseOver={()=>this.showInfo(event.eventId)}
+
         />
         )
     })
