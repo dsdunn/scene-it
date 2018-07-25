@@ -13,7 +13,8 @@ export class LandingForm extends Component {
     this.state = {
       location: '',
       keywords: '',
-      useCurrent: false
+      useCurrent: false,
+      isLoading: false
     };
   }
 
@@ -39,13 +40,15 @@ export class LandingForm extends Component {
       const coords = {lat: position.coords.latitude, lng: position.coords.longitude};
       await this.props.setLocation(coords)
       this.setState({
-        location: this.props.location
+        location: this.props.location,
+        isLoading: false
       })
     }
     if(navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(setLocation);
       this.setState({
-        useCurrent: !this.state.useCurrent
+        useCurrent: !this.state.useCurrent,
+        isLoading: true
       })
     }
   }
@@ -68,7 +71,7 @@ export class LandingForm extends Component {
             }
             <label htmlFor="keywords" /> 
             <input id="keywords" placeholder="keywords" onChange={this.handleChange} />
-            <button>Get Events</button>
+            {this.state.isLoading ? `loading...` : <button>Get Events</button> }
           </div>
         </form>
       </div>

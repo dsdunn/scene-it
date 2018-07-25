@@ -1,18 +1,35 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { withScriptjs, withGoogleMap, GoogleMap, Marker } from 'react-google-maps';
+import { withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow } from 'react-google-maps';
+
 
 
 class Map extends Component {
   constructor(props){
     super(props);
+    this.state={
+      infoPosition: null,
+      currentId: null
+    }
+  }
+
+  showInfo = (state) => {
+    this.setState({
+      infoPosition: state.position,
+      currentId: state.id
+    })
+
   }
 
   markers = () => {
     return this.props.events.map(event => {  
-      console.log(event)
       return (
-        <Marker position={{lat: event.lat,lng: event.lng}}/>
+        <Marker 
+        position={{lat: event.lat,lng: event.lng}}
+        title={event.title}
+        onMouseOver={()=>this.showInfo({id:event.eventId, position:{lat: event.lat,lng: event.lng}})}
+
+        />
         )
     })
   }
@@ -26,6 +43,11 @@ class Map extends Component {
       >
         {this.markers()}
         <Marker position={{lat, lng}}/>
+        {this.state.infoPosition && 
+          <InfoWindow position={this.state.infoPosition}>
+            <h2>{this.state.currentId}</h2>
+          </InfoWindow>
+        }
       </GoogleMap>
     )
   }
