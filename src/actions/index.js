@@ -17,3 +17,13 @@ export const locationFetchSuccess = (location) => ({
   type: 'LOCATION_FETCH_SUCCESS',
   location: location
 });
+
+export const selectEvent = (event) => ({
+  type: "SELECT_EVENT",
+  event: event
+})
+
+export const unselectEvent = () => ({
+  type: "UNSELECT_EVENT"
+})
+

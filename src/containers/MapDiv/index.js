@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow } from 'react-google-maps';
-
+import { selectEvent, unselectEvent } from '../../actions';
 
 
 class Map extends Component {
@@ -13,12 +13,14 @@ class Map extends Component {
     }
   }
 
-  showInfo = (state) => {
-    this.setState({
-      infoPosition: state.position,
-      currentId: state.id
-    })
-
+  showInfo = (event) => {
+    if (event.eventId === this.props.selectedEvent) {
+      this.props.unselectEvent();
+      this.setState({one: 'two'}) 
+    } else {
+      this.props.selectEvent(event);
+      this.setState({one: 'two'})
+    }
   }
 
   markers = () => {
@@ -27,10 +29,11 @@ class Map extends Component {
         <Marker 
         position={{lat: event.lat,lng: event.lng}}
         title={event.title}
-        onMouseOver={()=>this.showInfo({id:event.eventId, position:{lat: event.lat,lng: event.lng}})}
-
+        onClick={() => this.showInfo( event
+        )}
+        
         />
-        )
+      )
     })
   }
 
@@ -42,10 +45,9 @@ class Map extends Component {
         defaultCenter={{lat, lng}}
       >
         {this.markers()}
-        <Marker position={{lat, lng}}/>
-        {this.state.infoPosition && 
-          <InfoWindow position={this.state.infoPosition}>
-            <h2>{this.state.currentId}</h2>
+        {this.props.selectedEvent && 
+          <InfoWindow position={{lat: this.props.selectedEvent.lat, lng: this.props.selectedEvent.lng}}>
+            <h2>{this.props.selectEvent.title}</h2>
           </InfoWindow>
         }
       </GoogleMap>
@@ -55,7 +57,13 @@ class Map extends Component {
 
 const mapStateToProps = (state) => ({
   center: state.location,
-  events: state.events
+  events: state.events,
+  selectedEvent: state.selectedEvent
 })
 
-export default withScriptjs(withGoogleMap(connect(mapStateToProps)(Map)))
+const mapDispatchToProps = (dispatch) => ({
+  selectEvent: (id) => dispatch(selectEvent(id)),
+  unselectEvent: () => dispatch(unselectEvent())
+})
+
+export default withScriptjs(withGoogleMap(connect(mapStateToProps,mapDispatchToProps)(Map)))
