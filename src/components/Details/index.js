@@ -12,11 +12,13 @@ export const Details = (props) => {
     eventUrl, 
     address, 
     venueName, 
-    venueUrl
+    venueUrl,
+    image,
   } = props.selectedEvent ? props.selectedEvent : 'shit';
 
   return (
       <div className="details">
+        <img src={image}/>
         <h1 className="details-title">{title}</h1>
         <a href={venueUrl}>
           <h2 className="details-venue">{venueName}</h2>
@@ -24,6 +26,7 @@ export const Details = (props) => {
         <div className="details-address"> 
           <p className="streetAddress">{address}</p>
           <p className="city">{region}, {postalCode}</p>
+
         </div>
       </div>
     )
