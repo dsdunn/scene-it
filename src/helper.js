@@ -8,7 +8,7 @@ export const urlBuilder = (state) => {
     console.log(location)
   }
   const corsAnywhereUrl = 'https://cors-anywhere.herokuapp.com/'
-  return `${corsAnywhereUrl}http://api.eventful.com/json/events/search?app_key=${apiKey}&${keywords}&location=${location}&within=20&date=Today&page_size=20`;
+  return `${corsAnywhereUrl}http://api.eventful.com/json/events/search?app_key=${apiKey}&${keywords}&location=${location}&within=20&date=This_Week&page_size=20`;
 };
 
 export const dataCleaner = (events) => {
