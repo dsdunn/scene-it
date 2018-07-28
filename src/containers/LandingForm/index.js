@@ -11,7 +11,7 @@ export class LandingForm extends Component {
   constructor(props){
     super(props);
     this.state = {
-      location: '',
+      locationName: '',
       keywords: '',
       useCurrent: false,
       isLoading: false
@@ -27,11 +27,11 @@ export class LandingForm extends Component {
 
   handleSubmit = async (event) => {
     event.preventDefault();
-    if (this.state.location.length) {
+    if (!this.props.location.lat) {
       this.setState({isLoading:true});
-      await this.props.fetchLocation(this.state.location);
+      await this.props.fetchLocation(this.state.locationName);
     }
-    const url = urlBuilder({...this.state, location: this.props.location});
+    const url = urlBuilder({keywords: this.state.keywords, location: this.props.location});
     await this.props.fetchEvents(url);
     this.setState({isLoading: false});
     this.props.history.push('/results');
@@ -41,15 +41,14 @@ export class LandingForm extends Component {
     const setLocation = async (position) => {
       const lat = position.coords.latitude;
       const lng = position.coords.longitude;
-      // const coords = {lat, lng};
       await this.props.setLocation({lat, lng})
       const locationName = await reverseGeocode(`${lat},${lng}`);
-      console.log(locationName)
       this.setState({
-        location: this.props.location,
+        locationName,
         isLoading: false
       })
     }
+
     if(navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(setLocation);
       this.setState({
@@ -75,8 +74,8 @@ export class LandingForm extends Component {
           </div>
           <div className="query-info">
             <label htmlFor="location"></label>
-            {!this.state.useCurrent && 
-              <input id="location" placeholder="location" onChange={this.handleChange} />
+            { 
+              <input id="locationName" placeholder="location" value= {this.state.locationName} onChange={this.handleChange} />
             }
             <label htmlFor="keywords" /> 
             <input id="keywords" placeholder="keywords (optional)" onChange={this.handleChange} />
