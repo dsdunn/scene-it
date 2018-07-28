@@ -5,7 +5,6 @@ export const urlBuilder = (state) => {
   const keywords = state.keywords.length ? `keywords=tag:${state.keywords} || live+music || comedy&within=20` : 'keywords=live+music || comedy';
   if (typeof location != 'string') {
     location = location.lat + ', ' + location.lng;
-    console.log(location)
   }
   const corsAnywhereUrl = 'https://cors-anywhere.herokuapp.com/'
 

@@ -28,10 +28,12 @@ export class LandingForm extends Component {
   handleSubmit = async (event) => {
     event.preventDefault();
     if (this.state.location.length) {
+      this.setState({isLoading:true});
       await this.props.fetchLocation(this.state.location);
     }
     const url = urlBuilder({...this.state, location: this.props.location});
     await this.props.fetchEvents(url);
+    this.setState({isLoading: false});
     this.props.history.push('/results');
   }
 
