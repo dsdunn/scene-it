@@ -17,12 +17,21 @@ export const Details = ({selectedEvent}) => {
     description
   } = selectedEvent || 'unavailable';
 
+  const getBio = () => {
+    if (performers) {
+      return performers.performer[0] ?
+        performers.performer[0].short_bio :
+        performers.performer.short_bio ?
+        performers.performer.short_bio : '';
+    }
+  }
+
   return (
     selectedEvent &&
       <div className="details">
-        <img src={image.medium.url}/>
+        <img src={image ? image.medium.url : ''}/>
         <h1 className="details-title">{title}</h1>
-        <p className="details-genre">{performers.performer[0].short_bio}</p>
+        <p className="details-genre">{getBio()}</p>
         <h2 className="details-start-time">{startTime}</h2>
         <a target="_blank" href={venueUrl}>
           <h2 className="details-venue">{venueName}</h2>
