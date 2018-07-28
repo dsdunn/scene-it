@@ -15,11 +15,9 @@ class Map extends Component {
 
   showInfo = (event) => {
     if (event.eventId === this.props.selectedEvent) {
-      this.props.unselectEvent();
-      this.setState({one: 'two'}) 
+      this.props.unselectEvent(); 
     } else {
       this.props.selectEvent(event);
-      this.setState({one: 'two'})
     }
   }
 
@@ -39,7 +37,7 @@ class Map extends Component {
 
   render(){
     const { lat, lng } = this.props.center
-    return(
+    return lat ?
       <GoogleMap 
         defaultZoom={12}
         defaultCenter={{lat, lng}}
@@ -51,7 +49,7 @@ class Map extends Component {
           </InfoWindow>
         }
       </GoogleMap>
-    )
+    : <div></div>
   }
 }
 
