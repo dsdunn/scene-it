@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow } from 'react-google-maps';
-import MarkerClusterer from "react-google-maps/lib/components/addons/MarkerClusterer";
+import { MarkerClusterer } from "react-google-maps/lib/components/addons/MarkerClusterer";
 import { selectEvent, unselectEvent } from '../../actions';
 
 
@@ -26,21 +26,38 @@ class Map extends Component {
     }
   }
 
+  onMarkerClustererClick = (markerClusterer) => {
+    const clickedMarkers = markerClusterer.getMarkers()
+    console.log(clickedMarkers)
+  }
+
   markers = () => {
-    return this.props.events.map((event, index) => { 
-      const labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-      const label = labels[index];
-      return (
-        
-          <Marker 
-          position={{lat: event.lat,lng: event.lng}}
-          title={event.title}
-          label={label}
-          onClick={() => this.showInfo(event)}
-          />
-        
-      )
-    })
+    const uniqueVenues = [];
+
+    return <MarkerClusterer
+      onClick={this.onMarkerClustererClick}
+      averageCenter
+      enableRetinaIcons
+      gridSize={15}
+      >
+      {
+      this.props.events.map((event, index) => { 
+        if (!uniqueVenues.includes(event.venueId)) {
+          uniqueVenues.push(event.venueId);
+          const labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+          const label = labels[index];
+          return (
+              <Marker 
+              position={{lat: event.lat,lng: event.lng}}
+              title={event.title}
+              label={label}
+              onClick={() => this.showInfo(event)}
+              />
+            )
+          }     
+        })
+      }
+    </MarkerClusterer>
   }
 
   render(){
