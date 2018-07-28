@@ -1,8 +1,12 @@
 .map-div {
   display: flex;
-  max-height: 60vh;
 }
 
 .event-list {
+  height: 60vh;
   overflow: scroll;
+}
+
+.event-card {
+  border-bottom: 2px solid black;
 }
