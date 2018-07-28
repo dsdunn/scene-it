@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow } from 'react-google-maps';
+import { withScriptjs, withGoogleMap, GoogleMap, Marker } from 'react-google-maps';
 import { MarkerClusterer } from "react-google-maps/lib/components/addons/MarkerClusterer";
 import { selectEvent, unselectEvent } from '../../actions';
 
@@ -35,7 +35,6 @@ class Map extends Component {
     const uniqueVenues = [];
 
     return <MarkerClusterer
-      onClick={this.onMarkerClustererClick}
       averageCenter
       enableRetinaIcons
       gridSize={15}
@@ -67,12 +66,7 @@ class Map extends Component {
         defaultZoom={10}
         defaultCenter={{lat, lng}}
       >
-        {this.markers()}
-        {this.props.selectedEvent && 
-          <InfoWindow position={{lat: this.props.selectedEvent.lat, lng: this.props.selectedEvent.lng}}>
-            <p className="infoText">{this.state.infoText}</p>
-          </InfoWindow>
-        }
+       {this.markers()}
       </GoogleMap>
     : <div></div>
   }
