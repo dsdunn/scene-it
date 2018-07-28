@@ -2,10 +2,6 @@ import {apiKey, mapKey} from './apiKey';
 
 export const urlBuilder = ({location, keywords}) => {
   const words = keywords.length ? `keywords=tag:${keywords} || live+music || comedy&within=20` : 'keywords=live+music || comedy';
-  // if (typeof locationName != 'string') {
-  //   location = location.lat + ', ' + location.lng;
-  // } 
-  console.log(location)
   const corsAnywhereUrl = 'https://cors-anywhere.herokuapp.com/'
 
   return `${corsAnywhereUrl}http://api.eventful.com/json/events/search?app_key=${apiKey}&${words}&location=${location.lat}, ${location.lng}&within=20&date=This Week&page_size=20`;

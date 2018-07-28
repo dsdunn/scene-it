@@ -65,19 +65,20 @@ export class LandingForm extends Component {
         <header className="App-header">
           <h1 className="App-title">Scene-It</h1>
           <h5 className="header-description">
-            Enter your location or click "use my location" to find out what's happening in your scene this week!
+            Enter a location or click "use my location" to find out what's happening in your scene this week!
           </h5>
         </header>
-          <div>
+          <div className ="user-select">
             <input type="checkbox" id="use-current-location" onChange={this.useCurrent}/>
             <label htmlFor="use-current-location">Use my current location</label>
+            {this.state.useCurrent &&
+              <h3 userlocation-name >{this.state.locationName}</h3>
+            }
           </div>
           <div className="query-info">
-            <label htmlFor="location"></label>
-            { 
+            { !this.state.useCurrent &&
               <input id="locationName" placeholder="location" value= {this.state.locationName} onChange={this.handleChange} />
             }
-            <label htmlFor="keywords" /> 
             <input id="keywords" placeholder="keywords (optional)" onChange={this.handleChange} />
             {this.state.isLoading ? `loading...` : <button>Get Events</button> }
           </div>
