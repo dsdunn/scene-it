@@ -1,4 +1,4 @@
-import {apiKey} from './apiKey';
+import {apiKey, mapKey} from './apiKey';
 
 export const urlBuilder = (state) => {
   let { location } = state;
@@ -30,4 +30,12 @@ export const dataCleaner = (events) => {
     venueUrl: event.venue_url,
     image: event.image
   }))
+}
+
+export const reverseGeocode = async (location) => {
+  const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${location}&key=${mapKey}`
+  const response = await fetch(url);
+  const result = await response.json();
+  const locality = result.results[0].address_components.find(component => component.types.includes("locality"));
+  return locality.short_name;
 }
