@@ -33,6 +33,7 @@ export class LandingForm extends Component {
     }
     const url = urlBuilder({keywords: this.state.keywords, location: this.props.location});
     await this.props.fetchEvents(url);
+    console.log(url);
     this.setState({isLoading: false});
     this.props.history.push('/results');
   }

@@ -4,8 +4,8 @@ import { EventCard } from '../../components/EventCard';
 import  Map  from '../MapDiv';
 import { mapKey } from '../../apiKey';
 import './Body.css';
-import {selectEvent} from '../../actions';
-import Details from '../../components/Details';
+import { selectEvent } from '../../actions';
+import { Details } from '../../components/Details';
 
 const Body = (props) => {
 
@@ -25,7 +25,7 @@ const Body = (props) => {
         {eventList()}
       </div>
       </div>
-      <Details event={props.selectedEvent}/>
+      <Details selectedEvent={props.selectedEvent}/>
     </div>
   );
 }
