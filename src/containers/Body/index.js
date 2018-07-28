@@ -6,6 +6,7 @@ import { mapKey } from '../../apiKey';
 import './Body.css';
 import { selectEvent } from '../../actions';
 import { Details } from '../../components/Details';
+import BodyForm from '../BodyForm';
 
 const Body = (props) => {
 
@@ -13,6 +14,7 @@ const Body = (props) => {
 
   return (
     <div className="Body">
+      <BodyForm/>
       <div className="map-div">
         <Map 
           isMarkerShown

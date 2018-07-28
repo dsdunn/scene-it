@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import './LandingForm.css'
+import './BodyForm.css'
 
 import { urlBuilder, reverseGeocode } from '../../helper';
 import { fetchEvents } from '../../thunks/fetchEvents';
 import { fetchLocation } from '../../thunks/fetchLocation';
 import { locationFetchSuccess } from '../../actions';
 
-export class LandingForm extends Component {
+export class BodyForm extends Component {
   constructor(props){
     super(props);
     this.state = {
@@ -34,7 +34,6 @@ export class LandingForm extends Component {
     const url = urlBuilder({keywords: this.state.keywords, location: this.props.location});
     await this.props.fetchEvents(url);
     this.setState({isLoading: false});
-    this.props.history.push('/results');
   }
 
   useCurrent = (event) => {
@@ -61,13 +60,7 @@ export class LandingForm extends Component {
   render(){
     return (
       <div>
-        <form onSubmit={this.handleSubmit}className="landing-form">
-        <header className="App-header">
-          <h1 className="App-title">Scene-It</h1>
-          <h5 className="header-description">
-            Enter a location or click "use my location" to find out what's happening in your scene this week!
-          </h5>
-        </header>
+        <form onSubmit={this.handleSubmit}className="body-form">
           <div className ="user-select">
             <input type="checkbox" id="use-current-location" onChange={this.useCurrent}/>
             <label htmlFor="use-current-location">Use my current location</label>
@@ -98,4 +91,4 @@ const mapDispatchToProps = (dispatch) => ({
   setLocation: (location) => dispatch(locationFetchSuccess(location))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(LandingForm);
+export default connect(mapStateToProps, mapDispatchToProps)(BodyForm);
