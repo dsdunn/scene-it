@@ -74,7 +74,7 @@ export class LandingForm extends Component {
             <input type="checkbox" id="use-current-location" onChange={this.useCurrent}/>
             <label htmlFor="use-current-location">Use my current location</label>
             {this.state.useCurrent &&
-              <h3 userlocation-name >{this.state.locationName}</h3>
+              <h3 userlocation-name >location: {this.state.locationName}</h3>
             }
           </div>
           <div className="query-info">

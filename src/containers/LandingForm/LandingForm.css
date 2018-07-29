@@ -45,6 +45,8 @@
 
 h3 {
   margin: 2%;
+  font-family: 'Open Sans';
+  font-weight: bold;
 }
 
 .landing-form .query-info {

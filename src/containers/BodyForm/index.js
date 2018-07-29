@@ -59,7 +59,7 @@ export class BodyForm extends Component {
   render(){
     return (
       <div className="header">
-        <div className="body-form-logo">Scene-It</div>
+        <span className="body-form-logo">Scene-It</span>
         <form className="body-form" onSubmit={this.handleSubmit}>
           <div className ="user-select">
             <input type="checkbox" id="use-current-location" onChange={this.useCurrent}/>
@@ -67,7 +67,7 @@ export class BodyForm extends Component {
           </div>
           <div className="query-info">
             {this.state.useCurrent ?
-              <h3 userlocation-name >{this.state.locationName}</h3>
+              <h3 userlocation-name >location: {this.state.locationName}</h3>
             : <input id="locationName" placeholder="location" value= {this.state.locationName} onChange={this.handleChange} />
             }
             <input id="keywords" placeholder="keywords (optional)" onChange={this.handleChange} />

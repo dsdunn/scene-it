@@ -1,11 +1,12 @@
 .header {
   display: flex;
-  align-items: baseline;
-  justify-content: space-between;
+  justify-content: space-around;
   width: 100%;
+  padding: 1%;
   background-color: #261b16;
   opacity: .9;
   color: #fffcf9;
+  font-family: 'Open Sans';
 }
 
 .body-form-logo {
@@ -17,7 +18,7 @@
 
 .body-form {
   min-width: 40%;
-  margin-bottom:1%;
+  margin-right:2%;
 }
 
 .header .user-select {
