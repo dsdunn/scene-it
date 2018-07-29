@@ -16,16 +16,16 @@ const Body = (props) => {
     <div className="main-body">
       <BodyForm/>
       <div className="map-div">
+        <div className="event-list">
+          {eventList()}
+        </div>
         <Map 
           isMarkerShown
           googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${mapKey}&v=3.exp&libraries=geometry,drawing,places`}
           loadingElement={<div style={{ height: `100%` }} />}
-          containerElement={<div style={{ height: `60vh`, width: '60%' }} />}
+          containerElement={<div style={{ height: `50vh`, width: '50%', margin: '1%' }} />}
           mapElement={<div style={{ height: `100%` }} />}
         />
-        <div className="event-list">
-          {eventList()}
-        </div>
       </div>
       <Details selectedEvent={props.selectedEvent}/>
     </div>

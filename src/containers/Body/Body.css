@@ -1,18 +1,34 @@
-
-
 .main-body {
+  width: 100%;
+  display: block;
+  position: relative;
   background: center url('../../images/bar.jpg');
-  height: 100vh;
   background-size: cover;
   background-repeat: no-repeat;
+  height: 100vh;
+}
+.main-body::before {
+  content: '';
+  opacity: 0.15;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position:absolute;
+  height:100%;
+  background-color: #261b16;
 }
 
 .map-div {
+  margin: 10% 3%;
   display: flex;
+  background-color:#261b16;
+  opacity: 0.9;
 }
 
 .event-list {
-  height: 60vh;
+  height: 50vh;
+  width: 50%;
   overflow: scroll;
 }
 
