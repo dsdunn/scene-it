@@ -26,18 +26,13 @@ class Map extends Component {
     }
   }
 
-  onMarkerClustererClick = (markerClusterer) => {
-    const clickedMarkers = markerClusterer.getMarkers()
-    console.log(clickedMarkers)
-  }
-
   markers = () => {
     const uniqueVenues = [];
 
     return <MarkerClusterer
       averageCenter
       enableRetinaIcons
-      gridSize={15}
+      gridSize={20}
       >
       {
       this.props.events.map((event, index) => { 
@@ -50,7 +45,6 @@ class Map extends Component {
               position={{lat: event.lat,lng: event.lng}}
               title={event.title}
               label={label}
-              onClick={() => this.showInfo(event)}
               />
             )
           }     

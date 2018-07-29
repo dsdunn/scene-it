@@ -10,7 +10,7 @@ import BodyForm from '../BodyForm';
 
 const Body = (props) => {
 
-  const eventList = () => props.events.map(event => <EventCard event={event} selectEvent={props.selectEvent} selectedEvent={props.selectedEvent}/>)
+  const eventList = () => props.events.map((event, index) => <EventCard event={event} selectEvent={props.selectEvent} selectedEvent={props.selectedEvent} label={index} />)
 
   return (
     <div className="Body">

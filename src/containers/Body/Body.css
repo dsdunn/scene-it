@@ -6,3 +6,7 @@
 .event-list {
   overflow: scroll;
 }
+
+.selected {
+  background-color: #FFCA7D;
+}

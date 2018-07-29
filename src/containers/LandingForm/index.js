@@ -67,7 +67,7 @@ export class LandingForm extends Component {
         <header className="App-header">
           <h1 className="App-title">Scene-It</h1>
           <h5 className="header-description">
-            Enter a location or click "use my location" to find out what's happening in your scene this week!
+            Enter a location or check "use my location" to find out what's happening in your scene this week!
           </h5>
         </header>
           <div className ="user-select">
