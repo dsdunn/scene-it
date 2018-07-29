@@ -1,7 +1,18 @@
+.landing-body {
+  padding:5%;
+  background: center url('../../images/concert.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
 .landing-form {
-  background-color: lightgray;
+  background-color: #261b16;
+  opacity:.8;
   padding: 5%;
   font-size: 1.2em;
+  width: 50%;
+  margin: auto;
 }
 
 .landing-form .query-info {

@@ -7,6 +7,8 @@ import { fetchEvents } from '../../thunks/fetchEvents';
 import { fetchLocation } from '../../thunks/fetchLocation';
 import { locationFetchSuccess } from '../../actions';
 
+import concert from '../../images/concert.jpg'
+
 export class LandingForm extends Component {
   constructor(props){
     super(props);
@@ -60,7 +62,7 @@ export class LandingForm extends Component {
 
   render(){
     return (
-      <div>
+      <div className="landing-body">
         <form onSubmit={this.handleSubmit}className="landing-form">
         <header className="App-header">
           <h1 className="App-title">Scene-It</h1>
