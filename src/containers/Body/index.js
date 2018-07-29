@@ -23,9 +23,9 @@ const Body = (props) => {
           containerElement={<div style={{ height: `60vh`, width: '60%' }} />}
           mapElement={<div style={{ height: `100%` }} />}
         />
-      <div className="event-list">
-        {eventList()}
-      </div>
+        <div className="event-list">
+          {eventList()}
+        </div>
       </div>
       <Details selectedEvent={props.selectedEvent}/>
     </div>

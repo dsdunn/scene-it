@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import Moment from 'react-moment';
 
 export const Details = ({selectedEvent}) => {
   const {
@@ -27,12 +28,17 @@ export const Details = ({selectedEvent}) => {
   }
 
   return (
-    selectedEvent &&
+    selectedEvent ?
       <div className="details">
         <img src={image ? image.medium.url : ''}/>
         <h1 className="details-title">{title}</h1>
         <p className="details-genre">{getBio()}</p>
-        <h2 className="details-start-time">{startTime}</h2>
+        <h2 className="details-start-time">
+          <Moment 
+            date={startTime}
+            format="dddd, MMMM Do YYYY, hA"
+
+          ></Moment></h2>
         <a target="_blank" href={venueUrl}>
           <h2 className="details-venue">{venueName}</h2>
         </a>
@@ -45,6 +51,7 @@ export const Details = ({selectedEvent}) => {
           <p className="event-url">more information</p>
         </a>
       </div>  
+    : <p>select an event to see the details</p>
     )
 }
 
