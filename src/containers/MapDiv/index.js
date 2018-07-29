@@ -45,6 +45,7 @@ class Map extends Component {
               position={{lat: event.lat,lng: event.lng}}
               title={event.title}
               label={label}
+              onClick={() => this.showInfo(event)}
               />
             )
           }     
