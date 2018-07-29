@@ -9,7 +9,6 @@ export const EventCard = ({event, selectEvent, selectedEvent, label}) => {
   const letter = labels[label];
   const isSelected = () => {
     if (selectedEvent) {
-      console.log(selectedEvent.eventId, event.eventId)
       return selectedEvent.eventId === event.eventId;
     }
   }
@@ -17,7 +16,7 @@ export const EventCard = ({event, selectEvent, selectedEvent, label}) => {
   return (
     <div 
       className={`event-card ${isSelected() ? 'selected' : ''}`}
-      id={event.id} 
+      id={event.eventId} 
       onClick={handleClick}
     >
       <h3 className='card-label'>{letter}</h3>
