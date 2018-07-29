@@ -42,11 +42,11 @@
   color: #fffcf9;
 }
 
-h3 {
+/*h3 {
   margin: 2%;
-  font-family: 'Open Sans';
+  font-family: 'Roboto';
   font-weight: bold;
-}
+}*/
 
 .landing-form .query-info {
   display: flex;
@@ -59,4 +59,6 @@ h3 {
 .landing-form .query-info * {
   height: 3vh;
   margin: 2%;
+  font-family: 'Roboto';
+  font-size: .9em;
 }
