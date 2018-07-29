@@ -15,8 +15,9 @@
 
 .header-description {
   font-family: 'Open Sans';
-  font-size: 1em;
+  font-size: 1.1em;
   font-weight: 300;
+  margin: 3%;
 }
 
 .App-title {
@@ -25,6 +26,11 @@
   font-size: 4em;
   margin:1%;
   text-shadow: 0 0 0.3em #FF9900;
+}
+
+.landing-form label {
+  font-family: 'Open Sans';
+  font-size: .9em;
 }
 
 .landing-form {
@@ -37,6 +43,10 @@
   color: #fffcf9;
 }
 
+h3 {
+  margin: 2%;
+}
+
 .landing-form .query-info {
   display: flex;
   flex-direction: column;
@@ -47,5 +57,5 @@
 
 .landing-form .query-info * {
   height: 3vh;
-  margin: 4%;
+  margin: 2%;
 }

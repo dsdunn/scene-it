@@ -13,7 +13,7 @@ const Body = (props) => {
   const eventList = () => props.events.map((event, index) => <EventCard event={event} selectEvent={props.selectEvent} selectedEvent={props.selectedEvent} label={index} />)
 
   return (
-    <div className="Body">
+    <div className="main-body">
       <BodyForm/>
       <div className="map-div">
         <Map 
