@@ -7,6 +7,10 @@
   overflow: scroll;
 }
 
+.selected {
+  background-color: #FFCA7D;
+}
+
 .event-card {
   border-bottom: 2px solid black;
 }

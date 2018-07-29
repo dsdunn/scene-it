@@ -2,16 +2,18 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './LandingForm.css'
 
-import { urlBuilder } from '../../helper';
+import { urlBuilder, reverseGeocode } from '../../helper';
 import { fetchEvents } from '../../thunks/fetchEvents';
 import { fetchLocation } from '../../thunks/fetchLocation';
 import { locationFetchSuccess } from '../../actions';
+
+import concert from '../../images/concert.jpg'
 
 export class LandingForm extends Component {
   constructor(props){
     super(props);
     this.state = {
-      location: '',
+      locationName: '',
       keywords: '',
       useCurrent: false,
       isLoading: false
@@ -27,23 +29,28 @@ export class LandingForm extends Component {
 
   handleSubmit = async (event) => {
     event.preventDefault();
-    if (this.state.location.length) {
-      await this.props.fetchLocation(this.state.location);
+    if (!this.props.location.lat) {
+      this.setState({isLoading:true});
+      await this.props.fetchLocation(this.state.locationName);
     }
-    const url = urlBuilder({...this.state, location: this.props.location});
+    const url = urlBuilder({keywords: this.state.keywords, location: this.props.location});
     await this.props.fetchEvents(url);
+    this.setState({isLoading: false});
     this.props.history.push('/results');
   }
 
   useCurrent = (event) => {
     const setLocation = async (position) => {
-      const coords = {lat: position.coords.latitude, lng: position.coords.longitude};
-      await this.props.setLocation(coords)
+      const lat = position.coords.latitude;
+      const lng = position.coords.longitude;
+      await this.props.setLocation({lat, lng})
+      const locationName = await reverseGeocode(`${lat},${lng}`);
       this.setState({
-        location: this.props.location,
+        locationName,
         isLoading: false
       })
     }
+
     if(navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(setLocation);
       this.setState({
@@ -55,22 +62,26 @@ export class LandingForm extends Component {
 
   render(){
     return (
-      <div>
+      <div className="landing-body">
+        <form onSubmit={this.handleSubmit}className="landing-form">
         <header className="App-header">
           <h1 className="App-title">Scene-It</h1>
+          <h5 className="header-description">
+            Enter a location or check "use my location" to find out what's happening in your scene this week!
+          </h5>
         </header>
-        <form onSubmit={this.handleSubmit}className="landing-form">
-          <div>
+          <div className ="user-select">
             <input type="checkbox" id="use-current-location" onChange={this.useCurrent}/>
             <label htmlFor="use-current-location">Use my current location</label>
+            {this.state.useCurrent &&
+              <h3 userlocation-name >{this.state.locationName}</h3>
+            }
           </div>
           <div className="query-info">
-            <label htmlFor="location"></label>
-            {!this.state.useCurrent && 
-              <input id="location" placeholder="location" onChange={this.handleChange} />
+            { !this.state.useCurrent &&
+              <input id="locationName" placeholder="location" value= {this.state.locationName} onChange={this.handleChange} />
             }
-            <label htmlFor="keywords" /> 
-            <input id="keywords" placeholder="keywords" onChange={this.handleChange} />
+            <input id="keywords" placeholder="keywords (optional)" onChange={this.handleChange} />
             {this.state.isLoading ? `loading...` : <button>Get Events</button> }
           </div>
         </form>

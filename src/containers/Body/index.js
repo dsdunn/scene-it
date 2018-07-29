@@ -4,15 +4,17 @@ import { EventCard } from '../../components/EventCard';
 import  Map  from '../MapDiv';
 import { mapKey } from '../../apiKey';
 import './Body.css';
-import {selectEvent} from '../../actions';
-import Details from '../../components/Details';
+import { selectEvent } from '../../actions';
+import { Details } from '../../components/Details';
+import BodyForm from '../BodyForm';
 
 const Body = (props) => {
 
-  const eventList = () => props.events.map(event => <EventCard event={event} selectEvent={props.selectEvent} selectedEvent={props.selectedEvent}/>)
+  const eventList = () => props.events.map((event, index) => <EventCard event={event} selectEvent={props.selectEvent} selectedEvent={props.selectedEvent} label={index} />)
 
   return (
     <div className="Body">
+      <BodyForm/>
       <div className="map-div">
         <Map 
           isMarkerShown
@@ -21,11 +23,11 @@ const Body = (props) => {
           containerElement={<div style={{ height: `60vh`, width: '60%' }} />}
           mapElement={<div style={{ height: `100%` }} />}
         />
-      <div className="event-list">
-        {eventList()}
+        <div className="event-list">
+          {eventList()}
+        </div>
       </div>
-      </div>
-      <Details event={props.selectedEvent}/>
+      <Details selectedEvent={props.selectedEvent}/>
     </div>
   );
 }

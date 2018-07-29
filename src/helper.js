@@ -1,15 +1,10 @@
-import {apiKey} from './apiKey';
+import {apiKey, mapKey} from './apiKey';
 
-export const urlBuilder = (state) => {
-  let { location } = state;
-  const keywords = state.keywords.length ? `keywords=tag:${state.keywords} || live+music || comedy&within=20` : 'keywords=live+music || comedy';
-  if (typeof location != 'string') {
-    location = location.lat + ', ' + location.lng;
-    console.log(location)
-  }
+export const urlBuilder = ({location, keywords}) => {
+  const words = keywords.length ? `keywords=tag:${keywords} || live+music || comedy&within=20` : 'keywords=live+music || comedy';
   const corsAnywhereUrl = 'https://cors-anywhere.herokuapp.com/'
-  
-  return `${corsAnywhereUrl}http://api.eventful.com/json/events/search?app_key=${apiKey}&${keywords}&location=${location}&within=20&date=This Week&page_size=20`;
+
+  return `${corsAnywhereUrl}http://api.eventful.com/json/events/search?app_key=${apiKey}&${words}&location=${location.lat}, ${location.lng}&within=20&date=This Week&page_size=20&sort_order=date`;
 };
 
 export const dataCleaner = (events) => {
@@ -31,4 +26,12 @@ export const dataCleaner = (events) => {
     venueUrl: event.venue_url,
     image: event.image
   }))
+}
+
+export const reverseGeocode = async (location) => {
+  const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${location}&key=${mapKey}`
+  const response = await fetch(url);
+  const result = await response.json();
+  const locality = result.results[0].address_components.find(component => component.types.includes("locality"));
+  return locality.short_name;
 }

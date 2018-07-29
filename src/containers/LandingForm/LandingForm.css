@@ -1,16 +1,51 @@
-.landing-form {
-  justify-content: space-around;
-  background-color: lightgray;
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300|Shadows+Into+Light');
+
+.landing-body {
+  padding:7%;
+  background: center url('../../images/concert.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+.landing-form .App-header {
+  height: 40%;
   padding: 5%;
+  color: white;
+}
+
+.header-description {
+  font-family: 'Open Sans';
+  font-size: 1em;
+  font-weight: 300;
+}
+
+.App-title {
+  font-family: 'Shadows Into Light';
+  font-weight: 600;
+  font-size: 4em;
+  margin:1%;
+  text-shadow: 0 0 0.3em #FF9900;
+}
+
+.landing-form {
+  background-color: #261b16;
+  opacity:.9;
+  padding: 3%;
   font-size: 1.2em;
+  width: 60%;
+  margin: auto;
+  color: #fffcf9;
 }
 
-.landing-form div {
-  height: 3.5vh;
-  margin: 3%;
-}
-
-.query-info {
+.landing-form .query-info {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  width: 50%;
+  margin: 4% auto 4% auto;
+  height: 20%;
+}
+
+.landing-form .query-info * {
+  height: 3vh;
+  margin: 4%;
 }

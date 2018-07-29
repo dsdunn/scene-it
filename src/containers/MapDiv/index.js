@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow } from 'react-google-maps';
+import { withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow} from 'react-google-maps';
+import { MarkerClusterer } from "react-google-maps/lib/components/addons/MarkerClusterer";
 import { selectEvent, unselectEvent } from '../../actions';
 
 
@@ -9,49 +10,65 @@ class Map extends Component {
     super(props);
     this.state={
       infoPosition: null,
-      currentId: null
+      currentId: null,
+      infoText: null
     }
   }
 
   showInfo = (event) => {
     if (event.eventId === this.props.selectedEvent) {
-      this.props.unselectEvent();
-      this.setState({one: 'two'}) 
+      this.props.unselectEvent(); 
     } else {
       this.props.selectEvent(event);
-      this.setState({one: 'two'})
+      this.setState({
+        infoText: this.props.selectedEvent.title
+      })
     }
   }
 
   markers = () => {
-    return this.props.events.map(event => {  
-      return (
-        <Marker 
-        position={{lat: event.lat,lng: event.lng}}
-        title={event.title}
-        onClick={() => this.showInfo( event
-        )}
-        
-        />
-      )
-    })
+    const uniqueVenues = [];
+
+    return <MarkerClusterer
+      averageCenter
+      enableRetinaIcons
+      gridSize={20}
+      >
+      {
+      this.props.events.map((event, index) => { 
+        if (!uniqueVenues.includes(event.venueId)) {
+          uniqueVenues.push(event.venueId);
+          const labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+          const label = labels[index];
+          return (
+              <Marker 
+              position={{lat: event.lat,lng: event.lng}}
+              title={event.title}
+              label={label}
+              onClick={() => this.showInfo(event)}
+              />
+            )
+          }     
+        })
+      }
+    </MarkerClusterer>
   }
 
   render(){
     const { lat, lng } = this.props.center
-    return(
+    return lat ?
       <GoogleMap 
-        defaultZoom={12}
+        defaultZoom={10}
         defaultCenter={{lat, lng}}
       >
         {this.markers()}
         {this.props.selectedEvent && 
           <InfoWindow position={{lat: this.props.selectedEvent.lat, lng: this.props.selectedEvent.lng}}>
-            <h2>{this.props.selectEvent.title}</h2>
+            <p className="infoText">{this.props.selectedEvent.venueName}</p>
           </InfoWindow>
         }
       </GoogleMap>
-    )
+    : <div></div>
   }
 }
 
