@@ -31,8 +31,9 @@ class Map extends Component {
 
     return <MarkerClusterer
       averageCenter
+      zoomOnClick
       enableRetinaIcons
-      gridSize={20}
+      gridSize={40}
       >
       {
       this.props.events.map((event, index) => { 
