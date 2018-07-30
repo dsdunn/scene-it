@@ -5,7 +5,7 @@ a {
 
 .details {
   margin: auto;
-  padding: 3%;
+  padding: 2%;
   background-color: #261b16;
   opacity: .9;
   width: 88%;
@@ -17,58 +17,61 @@ a {
 
 .details img {
   float: left;
-  margin: 2%;
+  margin: 8px;
 }
 
 .details-description {
   max-height: 200px;
   overflow: scroll;
-  padding: 2%;
-  margin: auto;
+  line-height: 1.2em;
+  margin: 8px;
+  padding: 4px;
+  
 }
 
 .address {
   text-align: right;
-  font-size: 1.1em;
+  font-size: 1.3em;
 }
 
-.details-header-left {
-  margin: 0;
+.details-header {
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  line-height: 1.2em;
+}
+
+.details-header-right {
+  text-align: right;
 }
 
 .details-title {
   font-size: 1.7em;
   font-weight: bold;
+  margin-bottom: 19px;
+  line-height: 1.1em;
 }
 
 .details-genre {
-  padding: 3%;
-  font-size: 1em;
+  font-size: 1.2em;
   font-style: italic;
 }
 
 .details-start-time {
   text-align: left;
-  padding: 1%;
-  font-size: 1.3em;
 }
 
 .details-venue {
-  margin-bottom: 2%;
   text-align: right;
-  font-size: 1.5em;
-  line-height: 1.2em;
-}
-
-.details-header {
-  display:grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: . .;
+  font-size: 1.7em;
+  margin-bottom: 19px;
+  line-height: 1.1em;
 }
 
 .event-url {
-  margin-left: 5%;
+  font-size: 1.3em;
   color:#ffa500;
+  margin-top: 14px;
 }
 
 
