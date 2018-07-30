@@ -11,8 +11,16 @@ class Map extends Component {
     this.state={
       infoPosition: null,
       currentId: null,
-      infoText: null
+      infoText: null,
     }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    const {lat, lng} = nextProps.center;
+     console.log(lat, lng)
+    this.setState({
+      lat, lng
+    })
   }
 
   showInfo = (event) => {
@@ -56,11 +64,12 @@ class Map extends Component {
   }
 
   render(){
-    const { lat, lng } = this.props.center
+    const { lat, lng } = this.state;
+    console.log('render', lat, lng)
     return lat ?
       <GoogleMap 
         defaultZoom={10}
-        defaultCenter={{lat, lng}}
+        center={{lat, lng}}
       >
         {this.markers()}
         {this.props.selectedEvent && 

@@ -28,11 +28,9 @@ export class LandingForm extends Component {
   }
 
   handleSubmit = async (event) => {
-    event.preventDefault();
-    if (!this.props.location.lat) {
-      this.setState({isLoading:true});
-      await this.props.fetchLocation(this.state.locationName);
-    }
+    event.preventDefault();  
+    this.setState({isLoading:true});
+    await this.props.fetchLocation(this.state.locationName);
     const url = urlBuilder({keywords: this.state.keywords, location: this.props.location});
     await this.props.fetchEvents(url);
     this.setState({isLoading: false});
