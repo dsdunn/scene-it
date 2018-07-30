@@ -3,6 +3,7 @@
   display: block;
   background: center url('../../images/bar.jpg');
   background-size: cover;
+  background-attachment: fixed;
   background-repeat: no-repeat;
   height: 110vh;
 }
@@ -13,7 +14,7 @@
   left: 0;
   bottom: 0;
   right: 0;
-  position:absolute;
+  position:fixed;
   height:110%;
   background-color: #261b16;
 }
@@ -21,7 +22,7 @@
 .map-div {
   display: flex;
   align-items: center;
-  margin: 5% 4%;
+  margin: auto 4%;
   padding: 2%;
   height: 70vh;
 }
