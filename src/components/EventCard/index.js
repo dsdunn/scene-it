@@ -1,5 +1,6 @@
 import React from 'react';
 import Moment from 'react-moment';
+import './EventCard.css';
 
 export const EventCard = ({event, selectEvent, selectedEvent, label}) => {
   const handleClick = () => {
@@ -19,12 +20,14 @@ export const EventCard = ({event, selectEvent, selectedEvent, label}) => {
       id={event.eventId} 
       onClick={handleClick}
     >
-      <h3 className='card-label'>{letter}</h3>
-      <h4 className="card-title">{event.title}</h4>
+      <div className='card-label'><div className="circle">{letter}</div></div>
+      <div className='card-info'>
+        <h4 className="card-title">{event.title}</h4>
+        <p className="card-venue">{event.venueName}</p>
+      </div>
       <h5 className="date">
-        <Moment format="ddd MMM Do" date={event.startTime} />
+        <Moment format="ddd" date={event.startTime} />
       </h5>
-      <p className="card-venue">{event.venueName}</p>
     </div>
     )
 }

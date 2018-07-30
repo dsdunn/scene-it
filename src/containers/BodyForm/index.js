@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import './BodyForm.css'
-
 import { urlBuilder, reverseGeocode } from '../../helper';
 import { fetchEvents } from '../../thunks/fetchEvents';
 import { fetchLocation } from '../../thunks/fetchLocation';
 import { locationFetchSuccess } from '../../actions';
+import './BodyForm.css'
 
 export class BodyForm extends Component {
   constructor(props){
@@ -59,18 +58,17 @@ export class BodyForm extends Component {
 
   render(){
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}className="body-form">
+      <div className="header">
+        <span className="body-form-logo">Scene-It</span>
+        <form className="body-form" onSubmit={this.handleSubmit}>
           <div className ="user-select">
             <input type="checkbox" id="use-current-location" onChange={this.useCurrent}/>
             <label htmlFor="use-current-location">Use my current location</label>
-            {this.state.useCurrent &&
-              <h3 userlocation-name >{this.state.locationName}</h3>
-            }
           </div>
           <div className="query-info">
-            { !this.state.useCurrent &&
-              <input id="locationName" placeholder="location" value= {this.state.locationName} onChange={this.handleChange} />
+            {this.state.useCurrent ?
+              <h3 userlocation-name >location: {this.state.locationName}</h3>
+            : <input id="locationName" placeholder="location" value= {this.state.locationName} onChange={this.handleChange} />
             }
             <input id="keywords" placeholder="keywords (optional)" onChange={this.handleChange} />
             {this.state.isLoading ? `loading...` : <button>Get Events</button> }

@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300|Shadows+Into+Light');
 
 .landing-body {
   padding:7%;
@@ -15,8 +14,9 @@
 
 .header-description {
   font-family: 'Open Sans';
-  font-size: 1em;
+  font-size: 1.1em;
   font-weight: 300;
+  margin: 3%;
 }
 
 .App-title {
@@ -25,6 +25,11 @@
   font-size: 4em;
   margin:1%;
   text-shadow: 0 0 0.3em #FF9900;
+}
+
+.landing-form label {
+  font-family: 'Open Sans';
+  font-size: .9em;
 }
 
 .landing-form {
@@ -37,6 +42,12 @@
   color: #fffcf9;
 }
 
+/*h3 {
+  margin: 2%;
+  font-family: 'Roboto';
+  font-weight: bold;
+}*/
+
 .landing-form .query-info {
   display: flex;
   flex-direction: column;
@@ -47,5 +58,7 @@
 
 .landing-form .query-info * {
   height: 3vh;
-  margin: 4%;
+  margin: 2%;
+  font-family: 'Roboto';
+  font-size: .9em;
 }

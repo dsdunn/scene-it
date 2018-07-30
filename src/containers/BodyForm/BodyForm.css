@@ -1,0 +1,39 @@
+.header {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  padding: 2%;
+  background-color: #261b16;
+  opacity: .9;
+  color: #fffcf9;
+  font-family: 'Open Sans';
+}
+
+.body-form-logo {
+  font-family: 'Shadows Into Light';
+  font-size: 3em;
+  text-shadow: 0 0 0.3em #FF9900;
+  padding-left: 3%;
+  white-space: nowrap;
+}
+
+.body-form {
+  min-width: 40%;
+  margin-right:2%;
+}
+
+.header .user-select {
+  text-align: left;
+}
+
+.header .query-info {
+  display: flex;
+  justify-content: space-around;
+  margin-right: 4%;
+}
+
+.header .query-info input {
+  width: 40%;
+  font-size: 1.1em;
+  /*margin: 0 2% 0 2%;*/
+}

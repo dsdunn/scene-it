@@ -1,5 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300|Open+Sans:300|Shadows+Into+Light');
+
+html {
+  background-color: #261b16;
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
+  font-family: 'Open Sans';
 }
 
 .App-logo {

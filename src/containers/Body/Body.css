@@ -1,16 +1,35 @@
+.main-body {
+  width: 100%;
+  display: block;
+  background: center url('../../images/bar.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 110vh;
+}
+.main-body::before {
+  content: '';
+  opacity: 0.4;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position:absolute;
+  height:110%;
+  background-color: #261b16;
+}
+
 .map-div {
   display: flex;
+  align-items: center;
+  margin: 5% 4%;
+  padding: 2%;
+  height: 70vh;
 }
 
 .event-list {
-  height: 60vh;
+  height: 65vh;
+  width: 50%;
   overflow: scroll;
 }
 
-.selected {
-  background-color: #FFCA7D;
-}
 
-.event-card {
-  border-bottom: 2px solid black;
-}

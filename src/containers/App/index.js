@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 import  LandingForm  from '../LandingForm';
 import Body from '../Body';
+import '../../reset.css';
 import './App.css';
 
 class App extends Component {

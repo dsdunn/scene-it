@@ -13,19 +13,19 @@ const Body = (props) => {
   const eventList = () => props.events.map((event, index) => <EventCard event={event} selectEvent={props.selectEvent} selectedEvent={props.selectedEvent} label={index} />)
 
   return (
-    <div className="Body">
+    <div className="main-body">
       <BodyForm/>
       <div className="map-div">
+        <div className="event-list">
+          {eventList()}
+        </div>
         <Map 
           isMarkerShown
           googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${mapKey}&v=3.exp&libraries=geometry,drawing,places`}
           loadingElement={<div style={{ height: `100%` }} />}
-          containerElement={<div style={{ height: `60vh`, width: '60%' }} />}
+          containerElement={<div style={{ height: `65vh`, width: '50%', margin: '2%' }} />}
           mapElement={<div style={{ height: `100%` }} />}
         />
-        <div className="event-list">
-          {eventList()}
-        </div>
       </div>
       <Details selectedEvent={props.selectedEvent}/>
     </div>

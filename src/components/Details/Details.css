@@ -1,0 +1,55 @@
+
+
+.details {
+  margin: auto;
+  padding: 2%;
+  background-color: #261b16;
+  opacity: .9;
+  width: 92%;
+  color: #fffcf9;
+  min-height: 15px;
+  text-align: left;
+}
+
+img {
+  height: 200px;
+  float: left;
+  /*margin: 2%;*/
+}
+
+.details-description {
+  max-height: 300px;
+  overflow: scroll;
+  margin: 2%;
+}
+
+.details-title {
+  font-size: 1.7em;
+  font-weight: bold;
+  margin: auto;
+  padding: 1%;
+}
+
+.details-genre {
+  padding: 1%;
+  font-size: 1.3em;
+}
+
+.details-start-time {
+  float: right;
+  padding: 1%;
+  font-size: 1.3em;
+}
+
+.details-venue {
+  text-decoration: underline;
+  font-size: 1.5em;
+}
+
+.details-address {
+  text-align: right;
+}
+
+
+
+
