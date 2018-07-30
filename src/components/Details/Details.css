@@ -32,6 +32,7 @@ a {
 .address {
   text-align: right;
   font-size: 1.3em;
+  line-height: 1.1em;
 }
 
 .details-header {
@@ -48,7 +49,7 @@ a {
 .details-title {
   font-size: 1.7em;
   font-weight: bold;
-  margin-bottom: 19px;
+  margin-bottom: 12px;
   line-height: 1.1em;
 }
 
@@ -71,7 +72,7 @@ a {
 .event-url {
   font-size: 1.3em;
   color:#ffa500;
-  margin-top: 14px;
+  margin-top: 10px;
 }
 
 

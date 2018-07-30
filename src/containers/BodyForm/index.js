@@ -65,7 +65,7 @@ export class BodyForm extends Component {
           </div>
           <div className="query-info">
             {this.state.useCurrent ?
-              <h3 userlocation-name >location: {this.state.locationName}</h3>
+              <h3 className='user-location' >location: {this.state.locationName}</h3>
             : <input id="locationName" placeholder="location" value= {this.state.locationName} onChange={this.handleChange} />
             }
             <input id="keywords" placeholder="keywords (optional)" onChange={this.handleChange} />

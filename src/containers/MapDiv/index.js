@@ -74,7 +74,7 @@ class Map extends Component {
     console.log('render', lat, lng)
     return lat ?
       <GoogleMap 
-        defaultZoom={10}
+        zoom={10}
         center={{lat, lng}}
       >
         {this.markers()}
