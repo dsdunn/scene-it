@@ -33,7 +33,7 @@ class Map extends Component {
       averageCenter
       zoomOnClick
       enableRetinaIcons
-      gridSize={40}
+      gridSize={20}
       >
       {
       this.props.events.map((event, index) => { 

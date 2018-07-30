@@ -5,7 +5,7 @@
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
-  height: 110vh;
+  height: 100%;
 }
 .main-body::before {
   content: '';
@@ -15,7 +15,7 @@
   bottom: 0;
   right: 0;
   position:fixed;
-  height:110%;
+  height:100%;
   background-color: #261b16;
 }
 
@@ -24,7 +24,7 @@
   align-items: center;
   margin: auto 4%;
   padding: 2%;
-  height: 70vh;
+  height: 65vh;
 }
 
 .event-list {

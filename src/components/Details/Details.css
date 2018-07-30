@@ -11,7 +11,7 @@
   text-align: left;
 }
 
-img {
+.details img {
   height: 200px;
   float: left;
   /*margin: 2%;*/

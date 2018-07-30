@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Moment from 'react-moment';
+import './Details.css';
 
 export const Details = ({selectedEvent}) => {
   const {
