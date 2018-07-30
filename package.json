@@ -33,7 +33,7 @@
       "!src/index.js",
       "!setupTests.js",
       "!src/registerServiceWorker.js",
-      "!src/reducers/index.js"
+      "!src/reducers/rootReducer.js"
     ]
   }
 }

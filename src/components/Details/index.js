@@ -53,7 +53,8 @@ export const Details = ({selectedEvent}) => {
         <p className="event-url">
           <a target="_blank" href={eventUrl}>get tickets</a>
         </p>
-        <p className="details-description">{description}</p>
+        <p dangerouslySetInnerHTML={{__html: description}} 
+          className="details-description"></p>
       </div>  
     : <p className='details'>Scroll down from more. Click event for details.</p>
     )
