@@ -15,9 +15,15 @@ class Map extends Component {
     }
   }
 
+  componentDidMount() {
+    const {lat, lng} = this.props.center;
+    this.setState({
+      lat,lng
+    })
+  }
+
   componentWillReceiveProps(nextProps) {
     const {lat, lng} = nextProps.center;
-     console.log(lat, lng)
     this.setState({
       lat, lng
     })
