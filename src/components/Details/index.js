@@ -32,32 +32,30 @@ export const Details = ({selectedEvent}) => {
     selectedEvent ?
       <div className="details">
         <img src={image ? image.medium.url : ''}/>
-        <h1 className="details-title">{title}</h1>
-        <p className="details-genre">{getBio()}</p>
-        <h2 className="details-start-time">
+        <div className="details-header">
+          <div className='details-header-left'>
+            <h1 className="details-title">{title}</h1>
+            <p className="details-genre">{getBio()}</p>
+          </div>
+          <h2 className="details-venue">
+            <a target="_blank" href={venueUrl}>{venueName}</a>
+          </h2>
           <Moment 
+            className="details-start-time"
             date={startTime}
             format="dddd, MMMM Do YYYY, hA"
-
-          ></Moment></h2>
-        <a target="_blank" href={venueUrl}>
-          <h2 className="details-venue">{venueName}</h2>
-        </a>
-        <div className="details-address"> 
-          <p className="streetAddress">{address}</p>
-          <p className="city">{region}, {postalCode}</p>
-        </div>
+          /> 
+          <div className="address">
+            <p>{address}</p>
+            <p>{region}, {postalCode}</p>
+          </div>
+        </div>  
+        <p className="event-url">
+          <a target="_blank" href={eventUrl}>get tickets</a>
+        </p>
         <p className="details-description">{description}</p>
-        <a target="_blank" href={eventUrl}>
-          <p className="event-url">more information</p>
-        </a>
       </div>  
-    : <p>select an event to see the details</p>
+    : <p className='details'>select an event to see the details</p>
     )
 }
 
-// export const mapStateToProps = (state) => ({
-//   selectedEvent: state.selectedEvent
-// })
-
-// export default connect(mapStateToProps)(Details);

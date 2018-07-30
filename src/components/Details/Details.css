@@ -1,55 +1,75 @@
-
+a {
+  color: #ffa500;
+  text-decoration: none;
+}
 
 .details {
   margin: auto;
-  padding: 2%;
+  padding: 3%;
   background-color: #261b16;
   opacity: .9;
-  width: 92%;
+  width: 88%;
   color: #fffcf9;
   min-height: 15px;
+  box-shadow: 0 0 8px 4px #ffa500;
   text-align: left;
 }
 
 .details img {
-  height: 200px;
   float: left;
-  /*margin: 2%;*/
+  margin: 2%;
 }
 
 .details-description {
-  max-height: 300px;
+  max-height: 200px;
   overflow: scroll;
-  margin: 2%;
+  padding: 2%;
+  margin: auto;
+}
+
+.address {
+  text-align: right;
+  font-size: 1.1em;
+}
+
+.details-header-left {
+  margin: 0;
 }
 
 .details-title {
   font-size: 1.7em;
   font-weight: bold;
-  margin: auto;
-  padding: 1%;
 }
 
 .details-genre {
-  padding: 1%;
-  font-size: 1.3em;
+  padding: 3%;
+  font-size: 1em;
+  font-style: italic;
 }
 
 .details-start-time {
-  float: right;
+  text-align: left;
   padding: 1%;
   font-size: 1.3em;
 }
 
 .details-venue {
-  text-decoration: underline;
-  font-size: 1.5em;
-}
-
-.details-address {
+  margin-bottom: 2%;
   text-align: right;
+  font-size: 1.5em;
+  line-height: 1.2em;
 }
 
+.details-header {
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: . .;
+}
+
+.event-url {
+  margin-left: 5%;
+  color:#ffa500;
+}
 
 
 

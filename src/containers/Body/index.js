@@ -23,7 +23,7 @@ const Body = (props) => {
           isMarkerShown
           googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${mapKey}&v=3.exp&libraries=geometry,drawing,places`}
           loadingElement={<div style={{ height: `100%` }} />}
-          containerElement={<div style={{ height: `65vh`, width: '50%', margin: '2%' }} />}
+          containerElement={<div style={{ height: `60vh`, width: '50%', margin: '2%' }} />}
           mapElement={<div style={{ height: `100%` }} />}
         />
       </div>
