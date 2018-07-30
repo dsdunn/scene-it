@@ -50,7 +50,7 @@
   height: 20%;
 }
 
-.landing-form .query-info input, button {
+.landing-form .query-info input{
   height: 3vh;
   margin: 2%;
   font-family: 'Roboto';
