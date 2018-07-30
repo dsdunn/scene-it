@@ -42,12 +42,6 @@
   color: #fffcf9;
 }
 
-/*h3 {
-  margin: 2%;
-  font-family: 'Roboto';
-  font-weight: bold;
-}*/
-
 .landing-form .query-info {
   display: flex;
   flex-direction: column;
@@ -56,9 +50,15 @@
   height: 20%;
 }
 
-.landing-form .query-info * {
+.landing-form .query-info input, button {
   height: 3vh;
   margin: 2%;
   font-family: 'Roboto';
   font-size: .9em;
+}
+
+.user-location {
+  margin: 2%;
+  font-size: 1.2em;
+  font-weight: bold;
 }

@@ -55,7 +55,7 @@ export const Details = ({selectedEvent}) => {
         </p>
         <p className="details-description">{description}</p>
       </div>  
-    : <p className='details'>select an event to see the details</p>
+    : <p className='details'>Scroll down from more. Click event for details.</p>
     )
 }
 

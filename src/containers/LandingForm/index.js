@@ -73,13 +73,11 @@ export class LandingForm extends Component {
           <div className ="user-select">
             <input type="checkbox" id="use-current-location" onChange={this.useCurrent}/>
             <label htmlFor="use-current-location">Use my current location</label>
-            {this.state.useCurrent &&
-              <h3 userlocation-name >location: {this.state.locationName}</h3>
-            }
           </div>
           <div className="query-info">
-            { !this.state.useCurrent &&
-              <input id="locationName" placeholder="location" value= {this.state.locationName} onChange={this.handleChange} />
+            { this.state.useCurrent ?
+              <h3 className="user-location">location: <span className="user-location">{this.state.locationName}</span></h3>
+              : <input id="locationName" placeholder="location" value= {this.state.locationName} onChange={this.handleChange} />
             }
             <input id="keywords" placeholder="keywords (optional)" onChange={this.handleChange} />
             {this.state.isLoading ? `loading...` : <button>Get Events</button> }
