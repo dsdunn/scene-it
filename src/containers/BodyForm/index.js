@@ -74,7 +74,7 @@ export class BodyForm extends Component {
             : <input id="locationName" placeholder="location" value= {this.state.locationName} onChange={this.handleChange} />
             }
             <input id="keywords" placeholder="keywords (optional)" onChange={this.handleChange} />
-            {this.state.isLoading ? `loading...` : <button>Get Events</button> }
+            {this.state.isLoading ? <img className="loading" src="https://thumbs.gfycat.com/SkinnySeveralAsianlion-size_restricted.gif" /> : <button>Get Events</button> }
           </div>
         </form>
       </div>

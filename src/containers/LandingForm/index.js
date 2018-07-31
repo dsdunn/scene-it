@@ -74,11 +74,12 @@ export class LandingForm extends Component {
           </div>
           <div className="query-info">
             { this.state.useCurrent ?
-              <h3 className="user-location">location: <span className="user-location">{this.state.locationName}</span></h3>
+              <h3 className="user-location">location: {this.state.locationName}</h3>
               : <input id="locationName" placeholder="location" value= {this.state.locationName} onChange={this.handleChange} />
             }
             <input id="keywords" placeholder="keywords (optional)" onChange={this.handleChange} />
-            {this.state.isLoading ? `loading...` : <button>Get Events</button> }
+            {this.state.isLoading ? <img className="loading" src="https://thumbs.gfycat.com/SkinnySeveralAsianlion-size_restricted.gif" />
+              : <button className={'landing-submit'} disabled={!this.state.locationName}>Get Events</button> }
           </div>
         </form>
       </div>

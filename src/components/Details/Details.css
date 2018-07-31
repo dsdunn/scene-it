@@ -54,12 +54,15 @@ a {
 }
 
 .details-genre {
-  font-size: 1.2em;
+  font-size: 1.3em;
   font-style: italic;
+  margin-bottom: 12px;
+  margin-top: -7px;
 }
 
 .details-start-time {
   text-align: left;
+  font-size: 1.3em;
 }
 
 .details-venue {
@@ -70,7 +73,7 @@ a {
 }
 
 .event-url {
-  font-size: 1.3em;
+  font-size: 1.1em;
   color:#ffa500;
   margin-top: 10px;
 }
