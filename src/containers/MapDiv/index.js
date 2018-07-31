@@ -5,7 +5,7 @@ import { MarkerClusterer } from "react-google-maps/lib/components/addons/MarkerC
 import { selectEvent, unselectEvent } from '../../actions';
 
 
-class Map extends Component {
+export class Map extends Component {
   constructor(props){
     super(props);
     this.state={
@@ -88,15 +88,17 @@ class Map extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({
+export const mapStateToProps = (state) => ({
   center: state.location,
   events: state.events,
   selectedEvent: state.selectedEvent
 })
 
-const mapDispatchToProps = (dispatch) => ({
+export const mapDispatchToProps = (dispatch) => ({
   selectEvent: (id) => dispatch(selectEvent(id)),
   unselectEvent: () => dispatch(unselectEvent())
 })
+
+
 
 export default withScriptjs(withGoogleMap(connect(mapStateToProps,mapDispatchToProps)(Map)))

@@ -82,11 +82,11 @@ export class BodyForm extends Component {
   }
 }
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   location: state.location
 })
 
-const mapDispatchToProps = (dispatch) => ({
+export const mapDispatchToProps = (dispatch) => ({
   fetchEvents: (url) => dispatch(fetchEvents(url)),
   fetchLocation: (location) => dispatch(fetchLocation(location)),
   setLocation: (location) => dispatch(locationFetchSuccess(location))
