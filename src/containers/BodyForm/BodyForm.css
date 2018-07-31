@@ -44,6 +44,7 @@
   width: 20%;
   font-family: 'Roboto';
   font-size: .9em;
+  white-space: nowrap;
 }
 
 .header .user-location {

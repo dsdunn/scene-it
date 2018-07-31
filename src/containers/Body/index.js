@@ -8,33 +8,28 @@ import { selectEvent } from '../../actions';
 import { Details } from '../../components/Details';
 import BodyForm from '../BodyForm';
 
-export class Body extends Component {
-  constructor() {
-    super();
-  }
+export const Body = (props) => {
 
-  eventList = () => this.props.events.map((event, index) => <EventCard event={event} selectEvent={this.props.selectEvent} selectedEvent={this.props.selectedEvent} label={index} />)
-
-  render() {
-    return (
-      <div className="main-body">
-        <BodyForm/>
-        <div className="map-div">
-          <div className="event-list">
-            {this.eventList()}
-          </div>
-          <Map 
-            isMarkerShown
-            googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${mapKey}&v=3.exp&libraries=geometry,drawing,places`}
-            loadingElement={<div style={{ height: `100%` }} />}
-            containerElement={<div style={{ height: `60vh`, width: '50%', margin: '2%' }} />}
-            mapElement={<div style={{ height: `100%` }} />}
-          />
+  const eventList = () => this.props.events.map((event, index) => <EventCard event={event} selectEvent={this.props.selectEvent} selectedEvent={this.props.selectedEvent} label={index} />)
+  
+  return (
+    <div className="main-body">
+      <BodyForm/>
+      <div className="map-div">
+        <div className="event-list">
+          {this.eventList()}
         </div>
-        <Details selectedEvent={this.props.selectedEvent}/>
+        <Map 
+          isMarkerShown
+          googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${mapKey}&v=3.exp&libraries=geometry,drawing,places`}
+          loadingElement={<div style={{ height: `100%` }} />}
+          containerElement={<div style={{ height: `60vh`, width: '50%', margin: '2%' }} />}
+          mapElement={<div style={{ height: `100%` }} />}
+        />
       </div>
-    );
-  }
+      <Details selectedEvent={this.props.selectedEvent}/>
+    </div>
+  );
 }
 
 export const mapStateToProps = (state) => ({

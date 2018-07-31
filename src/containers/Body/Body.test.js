@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Body from './index';
+import { Body } from './index';
 import { mapStateToProps, mapDispatchToProps } from './index';
 import { selectEvent } from '../../actions';
 
@@ -14,7 +14,7 @@ describe('Body', () => {
   }
 
   it('matches the snapshot', () => {
-    let wrapper = shallow(<Body {...mockProps}/>)
+    let wrapper = shallow(<Body />)
     expect(wrapper).toMatchSnapshot();
   })
 
