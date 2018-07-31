@@ -5,30 +5,16 @@ import { mapStateToProps, mapDispatchToProps } from './index';
 import { selectEvent } from '../../actions';
 
 describe('Body', () => {
-  const mockState = {
-    events: ['one', 'two', 'three'],
-    selectedEvent: {eventId: 1}
-  }
+
   const mockProps = {
-    store: {getState: jest.fn(()=>mockState), subscribe: jest.fn(), dispatch: jest.fn()}
+    events: ['one', 'two', 'three'],
+    selectedEvent: {eventId: 1},
+    selectEvent: jest.fn(),
   }
 
   it('matches the snapshot', () => {
-    let wrapper = shallow(<Body />)
-    expect(wrapper).toMatchSnapshot();
-  })
-
-  it.skip('creates an eventList', () => {
     let wrapper = shallow(<Body {...mockProps} />)
-
-    const actual = wrapper.instance().eventList()
-
-    expect(actual.length).toEqual(3);
-  })
-
-  it.skip('renders an EventCard for every event', () => {
-    let wrapper = shallow(<Body {...mockProps}/>)
-    expect(wrapper.find(EventCard).length).toEqual(3)
+    expect(wrapper).toMatchSnapshot();
   })
 })
 

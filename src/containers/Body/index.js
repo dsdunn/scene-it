@@ -10,14 +10,14 @@ import BodyForm from '../BodyForm';
 
 export const Body = (props) => {
 
-  const eventList = () => this.props.events.map((event, index) => <EventCard event={event} selectEvent={this.props.selectEvent} selectedEvent={this.props.selectedEvent} label={index} />)
-  
+  const eventList = () => props.events.map((event, index) => <EventCard event={event} selectEvent={props.selectEvent} selectedEvent={props.selectedEvent} label={index} key={200+index}/>)
+
   return (
     <div className="main-body">
       <BodyForm/>
       <div className="map-div">
         <div className="event-list">
-          {this.eventList()}
+          {eventList()}
         </div>
         <Map 
           isMarkerShown
@@ -27,7 +27,7 @@ export const Body = (props) => {
           mapElement={<div style={{ height: `100%` }} />}
         />
       </div>
-      <Details selectedEvent={this.props.selectedEvent}/>
+      <Details selectedEvent={props.selectedEvent}/>
     </div>
   );
 }

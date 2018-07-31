@@ -4,12 +4,18 @@ exports[`Body matches the snapshot 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Connect(Body)
-    store={
+  Symbol(enzyme.__unrendered__): <Unknown
+    events={
+        Array [
+            "one",
+            "two",
+            "three",
+          ]
+    }
+    selectEvent={[Function]}
+    selectedEvent={
         Object {
-            "dispatch": [Function],
-            "getState": [Function],
-            "subscribe": [Function],
+            "eventId": 1,
           }
     }
 />,
@@ -23,83 +29,649 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "class",
+    "nodeType": "host",
     "props": Object {
-      "events": Array [
-        "one",
-        "two",
-        "three",
+      "children": Array [
+        <withRouter(Connect(BodyForm)) />,
+        <div
+          className="map-div"
+>
+          <div
+                    className="event-list"
+          >
+                    <Unknown
+                              event="one"
+                              label={0}
+                              selectEvent={[Function]}
+                              selectedEvent={
+                                        Object {
+                                                  "eventId": 1,
+                                                }
+                              }
+                    />
+                    <Unknown
+                              event="two"
+                              label={1}
+                              selectEvent={[Function]}
+                              selectedEvent={
+                                        Object {
+                                                  "eventId": 1,
+                                                }
+                              }
+                    />
+                    <Unknown
+                              event="three"
+                              label={2}
+                              selectEvent={[Function]}
+                              selectedEvent={
+                                        Object {
+                                                  "eventId": 1,
+                                                }
+                              }
+                    />
+          </div>
+          <withScriptjs(withGoogleMap(Connect(Map)))
+                    containerElement={
+                              <div
+                                        style={
+                                                  Object {
+                                                            "height": "60vh",
+                                                            "margin": "2%",
+                                                            "width": "50%",
+                                                          }
+                                        }
+                              />
+                    }
+                    googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyDuYzzorAhh3LMrRkNZPWD4r2TFZdhIzDI&v=3.exp&libraries=geometry,drawing,places"
+                    isMarkerShown={true}
+                    loadingElement={
+                              <div
+                                        style={
+                                                  Object {
+                                                            "height": "100%",
+                                                          }
+                                        }
+                              />
+                    }
+                    mapElement={
+                              <div
+                                        style={
+                                                  Object {
+                                                            "height": "100%",
+                                                          }
+                                        }
+                              />
+                    }
+          />
+</div>,
+        <Unknown
+          selectedEvent={
+                    Object {
+                              "eventId": 1,
+                            }
+          }
+/>,
       ],
-      "selectEvent": [Function],
-      "selectedEvent": Object {
-        "eventId": 1,
-      },
-      "store": Object {
-        "dispatch": [Function],
-        "getState": [Function],
-        "subscribe": [Function],
-      },
-      "storeSubscription": Subscription {
-        "listeners": Object {
-          "clear": [Function],
-          "get": [Function],
-          "notify": [Function],
-          "subscribe": [Function],
-        },
-        "onStateChange": [Function],
-        "parentSub": undefined,
-        "store": Object {
-          "dispatch": [Function],
-          "getState": [Function],
-          "subscribe": [Function],
-        },
-        "unsubscribe": undefined,
-      },
+      "className": "main-body",
     },
     "ref": null,
-    "rendered": null,
-    "type": [Function],
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {},
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <div
+              className="event-list"
+>
+              <Unknown
+                            event="one"
+                            label={0}
+                            selectEvent={[Function]}
+                            selectedEvent={
+                                          Object {
+                                                        "eventId": 1,
+                                                      }
+                            }
+              />
+              <Unknown
+                            event="two"
+                            label={1}
+                            selectEvent={[Function]}
+                            selectedEvent={
+                                          Object {
+                                                        "eventId": 1,
+                                                      }
+                            }
+              />
+              <Unknown
+                            event="three"
+                            label={2}
+                            selectEvent={[Function]}
+                            selectedEvent={
+                                          Object {
+                                                        "eventId": 1,
+                                                      }
+                            }
+              />
+</div>,
+            <withScriptjs(withGoogleMap(Connect(Map)))
+              containerElement={
+                            <div
+                                          style={
+                                                        Object {
+                                                                      "height": "60vh",
+                                                                      "margin": "2%",
+                                                                      "width": "50%",
+                                                                    }
+                                          }
+                            />
+              }
+              googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyDuYzzorAhh3LMrRkNZPWD4r2TFZdhIzDI&v=3.exp&libraries=geometry,drawing,places"
+              isMarkerShown={true}
+              loadingElement={
+                            <div
+                                          style={
+                                                        Object {
+                                                                      "height": "100%",
+                                                                    }
+                                          }
+                            />
+              }
+              mapElement={
+                            <div
+                                          style={
+                                                        Object {
+                                                                      "height": "100%",
+                                                                    }
+                                          }
+                            />
+              }
+/>,
+          ],
+          "className": "map-div",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <Unknown
+                  event="one"
+                  label={0}
+                  selectEvent={[Function]}
+                  selectedEvent={
+                                    Object {
+                                                      "eventId": 1,
+                                                    }
+                  }
+/>,
+                <Unknown
+                  event="two"
+                  label={1}
+                  selectEvent={[Function]}
+                  selectedEvent={
+                                    Object {
+                                                      "eventId": 1,
+                                                    }
+                  }
+/>,
+                <Unknown
+                  event="three"
+                  label={2}
+                  selectEvent={[Function]}
+                  selectedEvent={
+                                    Object {
+                                                      "eventId": 1,
+                                                    }
+                  }
+/>,
+              ],
+              "className": "event-list",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": "200",
+                "nodeType": "function",
+                "props": Object {
+                  "event": "one",
+                  "label": 0,
+                  "selectEvent": [Function],
+                  "selectedEvent": Object {
+                    "eventId": 1,
+                  },
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": "201",
+                "nodeType": "function",
+                "props": Object {
+                  "event": "two",
+                  "label": 1,
+                  "selectEvent": [Function],
+                  "selectedEvent": Object {
+                    "eventId": 1,
+                  },
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": "202",
+                "nodeType": "function",
+                "props": Object {
+                  "event": "three",
+                  "label": 2,
+                  "selectEvent": [Function],
+                  "selectedEvent": Object {
+                    "eventId": 1,
+                  },
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+            ],
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "containerElement": <div
+                style={
+                                Object {
+                                                "height": "60vh",
+                                                "margin": "2%",
+                                                "width": "50%",
+                                              }
+                }
+/>,
+              "googleMapURL": "https://maps.googleapis.com/maps/api/js?key=AIzaSyDuYzzorAhh3LMrRkNZPWD4r2TFZdhIzDI&v=3.exp&libraries=geometry,drawing,places",
+              "isMarkerShown": true,
+              "loadingElement": <div
+                style={
+                                Object {
+                                                "height": "100%",
+                                              }
+                }
+/>,
+              "mapElement": <div
+                style={
+                                Object {
+                                                "height": "100%",
+                                              }
+                }
+/>,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "selectedEvent": Object {
+            "eventId": 1,
+          },
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": "div",
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "class",
+      "nodeType": "host",
       "props": Object {
-        "events": Array [
-          "one",
-          "two",
-          "three",
+        "children": Array [
+          <withRouter(Connect(BodyForm)) />,
+          <div
+            className="map-div"
+>
+            <div
+                        className="event-list"
+            >
+                        <Unknown
+                                    event="one"
+                                    label={0}
+                                    selectEvent={[Function]}
+                                    selectedEvent={
+                                                Object {
+                                                            "eventId": 1,
+                                                          }
+                                    }
+                        />
+                        <Unknown
+                                    event="two"
+                                    label={1}
+                                    selectEvent={[Function]}
+                                    selectedEvent={
+                                                Object {
+                                                            "eventId": 1,
+                                                          }
+                                    }
+                        />
+                        <Unknown
+                                    event="three"
+                                    label={2}
+                                    selectEvent={[Function]}
+                                    selectedEvent={
+                                                Object {
+                                                            "eventId": 1,
+                                                          }
+                                    }
+                        />
+            </div>
+            <withScriptjs(withGoogleMap(Connect(Map)))
+                        containerElement={
+                                    <div
+                                                style={
+                                                            Object {
+                                                                        "height": "60vh",
+                                                                        "margin": "2%",
+                                                                        "width": "50%",
+                                                                      }
+                                                }
+                                    />
+                        }
+                        googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyDuYzzorAhh3LMrRkNZPWD4r2TFZdhIzDI&v=3.exp&libraries=geometry,drawing,places"
+                        isMarkerShown={true}
+                        loadingElement={
+                                    <div
+                                                style={
+                                                            Object {
+                                                                        "height": "100%",
+                                                                      }
+                                                }
+                                    />
+                        }
+                        mapElement={
+                                    <div
+                                                style={
+                                                            Object {
+                                                                        "height": "100%",
+                                                                      }
+                                                }
+                                    />
+                        }
+            />
+</div>,
+          <Unknown
+            selectedEvent={
+                        Object {
+                                    "eventId": 1,
+                                  }
+            }
+/>,
         ],
-        "selectEvent": [Function],
-        "selectedEvent": Object {
-          "eventId": 1,
-        },
-        "store": Object {
-          "dispatch": [Function],
-          "getState": [Function],
-          "subscribe": [Function],
-        },
-        "storeSubscription": Subscription {
-          "listeners": Object {
-            "clear": [Function],
-            "get": [Function],
-            "notify": [Function],
-            "subscribe": [Function],
-          },
-          "onStateChange": [Function],
-          "parentSub": undefined,
-          "store": Object {
-            "dispatch": [Function],
-            "getState": [Function],
-            "subscribe": [Function],
-          },
-          "unsubscribe": undefined,
-        },
+        "className": "main-body",
       },
       "ref": null,
-      "rendered": null,
-      "type": [Function],
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <div
+                className="event-list"
+>
+                <Unknown
+                                event="one"
+                                label={0}
+                                selectEvent={[Function]}
+                                selectedEvent={
+                                                Object {
+                                                                "eventId": 1,
+                                                              }
+                                }
+                />
+                <Unknown
+                                event="two"
+                                label={1}
+                                selectEvent={[Function]}
+                                selectedEvent={
+                                                Object {
+                                                                "eventId": 1,
+                                                              }
+                                }
+                />
+                <Unknown
+                                event="three"
+                                label={2}
+                                selectEvent={[Function]}
+                                selectedEvent={
+                                                Object {
+                                                                "eventId": 1,
+                                                              }
+                                }
+                />
+</div>,
+              <withScriptjs(withGoogleMap(Connect(Map)))
+                containerElement={
+                                <div
+                                                style={
+                                                                Object {
+                                                                                "height": "60vh",
+                                                                                "margin": "2%",
+                                                                                "width": "50%",
+                                                                              }
+                                                }
+                                />
+                }
+                googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyDuYzzorAhh3LMrRkNZPWD4r2TFZdhIzDI&v=3.exp&libraries=geometry,drawing,places"
+                isMarkerShown={true}
+                loadingElement={
+                                <div
+                                                style={
+                                                                Object {
+                                                                                "height": "100%",
+                                                                              }
+                                                }
+                                />
+                }
+                mapElement={
+                                <div
+                                                style={
+                                                                Object {
+                                                                                "height": "100%",
+                                                                              }
+                                                }
+                                />
+                }
+/>,
+            ],
+            "className": "map-div",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <Unknown
+                    event="one"
+                    label={0}
+                    selectEvent={[Function]}
+                    selectedEvent={
+                                        Object {
+                                                            "eventId": 1,
+                                                          }
+                    }
+/>,
+                  <Unknown
+                    event="two"
+                    label={1}
+                    selectEvent={[Function]}
+                    selectedEvent={
+                                        Object {
+                                                            "eventId": 1,
+                                                          }
+                    }
+/>,
+                  <Unknown
+                    event="three"
+                    label={2}
+                    selectEvent={[Function]}
+                    selectedEvent={
+                                        Object {
+                                                            "eventId": 1,
+                                                          }
+                    }
+/>,
+                ],
+                "className": "event-list",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": "200",
+                  "nodeType": "function",
+                  "props": Object {
+                    "event": "one",
+                    "label": 0,
+                    "selectEvent": [Function],
+                    "selectedEvent": Object {
+                      "eventId": 1,
+                    },
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": "201",
+                  "nodeType": "function",
+                  "props": Object {
+                    "event": "two",
+                    "label": 1,
+                    "selectEvent": [Function],
+                    "selectedEvent": Object {
+                      "eventId": 1,
+                    },
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": "202",
+                  "nodeType": "function",
+                  "props": Object {
+                    "event": "three",
+                    "label": 2,
+                    "selectEvent": [Function],
+                    "selectedEvent": Object {
+                      "eventId": 1,
+                    },
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+              ],
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "containerElement": <div
+                  style={
+                                    Object {
+                                                      "height": "60vh",
+                                                      "margin": "2%",
+                                                      "width": "50%",
+                                                    }
+                  }
+/>,
+                "googleMapURL": "https://maps.googleapis.com/maps/api/js?key=AIzaSyDuYzzorAhh3LMrRkNZPWD4r2TFZdhIzDI&v=3.exp&libraries=geometry,drawing,places",
+                "isMarkerShown": true,
+                "loadingElement": <div
+                  style={
+                                    Object {
+                                                      "height": "100%",
+                                                    }
+                  }
+/>,
+                "mapElement": <div
+                  style={
+                                    Object {
+                                                      "height": "100%",
+                                                    }
+                  }
+/>,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "selectedEvent": Object {
+              "eventId": 1,
+            },
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": "div",
     },
   ],
   Symbol(enzyme.__options__): Object {
