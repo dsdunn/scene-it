@@ -1,0 +1,1 @@
+export const fetchEvents = jest.fn()

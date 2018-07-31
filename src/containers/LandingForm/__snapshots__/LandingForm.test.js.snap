@@ -4,14 +4,29 @@ exports[`BodyForm should match the snapshot 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Connect(LandingForm)
-    store={
+  Symbol(enzyme.__unrendered__): <LandingForm
+    events={
+        Array [
+            "one",
+            "two",
+            "three",
+          ]
+    }
+    fetchEvents={[Function]}
+    fetchLocation={[Function]}
+    history={Array []}
+    location={
         Object {
-            "dispatch": [Function],
-            "getState": [Function],
-            "subscribe": [Function],
+            "lat": 1,
+            "lng": 2,
           }
     }
+    selectedEvent={
+        Object {
+            "eventId": 1,
+          }
+    }
+    setLocation={[Function]}
 />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -23,79 +38,595 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "class",
+    "nodeType": "host",
     "props": Object {
-      "fetchEvents": [Function],
-      "fetchLocation": [Function],
-      "location": Object {
-        "lat": 1,
-        "lng": 2,
-      },
-      "setLocation": [Function],
-      "store": Object {
-        "dispatch": [Function],
-        "getState": [Function],
-        "subscribe": [Function],
-      },
-      "storeSubscription": Subscription {
-        "listeners": Object {
-          "clear": [Function],
-          "get": [Function],
-          "notify": [Function],
-          "subscribe": [Function],
-        },
-        "onStateChange": [Function],
-        "parentSub": undefined,
-        "store": Object {
-          "dispatch": [Function],
-          "getState": [Function],
-          "subscribe": [Function],
-        },
-        "unsubscribe": undefined,
-      },
+      "children": <form
+        className="landing-form"
+        onSubmit={[Function]}
+>
+        <header
+                className="App-header"
+        >
+                <h1
+                        className="App-title"
+                >
+                        Scene-It
+                </h1>
+                <h5
+                        className="header-description"
+                >
+                        Enter a location or check "use my location" to find out what's happening in your scene this week!
+                </h5>
+        </header>
+        <div
+                className="user-select"
+        >
+                <input
+                        id="use-current-location"
+                        onChange={[Function]}
+                        type="checkbox"
+                />
+                <label
+                        htmlFor="use-current-location"
+                >
+                        Use my current location
+                </label>
+        </div>
+        <div
+                className="query-info"
+        >
+                <input
+                        id="locationName"
+                        onChange={[Function]}
+                        placeholder="location"
+                        value=""
+                />
+                <input
+                        id="keywords"
+                        onChange={[Function]}
+                        placeholder="keywords (optional)"
+                />
+                <button
+                        className="landing-submit"
+                        disabled={true}
+                >
+                        Get Events
+                </button>
+        </div>
+</form>,
+      "className": "landing-body",
     },
     "ref": null,
-    "rendered": null,
-    "type": [Function],
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <header
+            className="App-header"
+>
+            <h1
+                        className="App-title"
+            >
+                        Scene-It
+            </h1>
+            <h5
+                        className="header-description"
+            >
+                        Enter a location or check "use my location" to find out what's happening in your scene this week!
+            </h5>
+</header>,
+          <div
+            className="user-select"
+>
+            <input
+                        id="use-current-location"
+                        onChange={[Function]}
+                        type="checkbox"
+            />
+            <label
+                        htmlFor="use-current-location"
+            >
+                        Use my current location
+            </label>
+</div>,
+          <div
+            className="query-info"
+>
+            <input
+                        id="locationName"
+                        onChange={[Function]}
+                        placeholder="location"
+                        value=""
+            />
+            <input
+                        id="keywords"
+                        onChange={[Function]}
+                        placeholder="keywords (optional)"
+            />
+            <button
+                        className="landing-submit"
+                        disabled={true}
+            >
+                        Get Events
+            </button>
+</div>,
+        ],
+        "className": "landing-form",
+        "onSubmit": [Function],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <h1
+                className="App-title"
+>
+                Scene-It
+</h1>,
+              <h5
+                className="header-description"
+>
+                Enter a location or check "use my location" to find out what's happening in your scene this week!
+</h5>,
+            ],
+            "className": "App-header",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Scene-It",
+                "className": "App-title",
+              },
+              "ref": null,
+              "rendered": "Scene-It",
+              "type": "h1",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Enter a location or check \\"use my location\\" to find out what's happening in your scene this week!",
+                "className": "header-description",
+              },
+              "ref": null,
+              "rendered": "Enter a location or check \\"use my location\\" to find out what's happening in your scene this week!",
+              "type": "h5",
+            },
+          ],
+          "type": "header",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <input
+                id="use-current-location"
+                onChange={[Function]}
+                type="checkbox"
+/>,
+              <label
+                htmlFor="use-current-location"
+>
+                Use my current location
+</label>,
+            ],
+            "className": "user-select",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "id": "use-current-location",
+                "onChange": [Function],
+                "type": "checkbox",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "input",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Use my current location",
+                "htmlFor": "use-current-location",
+              },
+              "ref": null,
+              "rendered": "Use my current location",
+              "type": "label",
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <input
+                id="locationName"
+                onChange={[Function]}
+                placeholder="location"
+                value=""
+/>,
+              <input
+                id="keywords"
+                onChange={[Function]}
+                placeholder="keywords (optional)"
+/>,
+              <button
+                className="landing-submit"
+                disabled={true}
+>
+                Get Events
+</button>,
+            ],
+            "className": "query-info",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "id": "locationName",
+                "onChange": [Function],
+                "placeholder": "location",
+                "value": "",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "input",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "id": "keywords",
+                "onChange": [Function],
+                "placeholder": "keywords (optional)",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "input",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Get Events",
+                "className": "landing-submit",
+                "disabled": true,
+              },
+              "ref": null,
+              "rendered": "Get Events",
+              "type": "button",
+            },
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "form",
+    },
+    "type": "div",
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "class",
+      "nodeType": "host",
       "props": Object {
-        "fetchEvents": [Function],
-        "fetchLocation": [Function],
-        "location": Object {
-          "lat": 1,
-          "lng": 2,
-        },
-        "setLocation": [Function],
-        "store": Object {
-          "dispatch": [Function],
-          "getState": [Function],
-          "subscribe": [Function],
-        },
-        "storeSubscription": Subscription {
-          "listeners": Object {
-            "clear": [Function],
-            "get": [Function],
-            "notify": [Function],
-            "subscribe": [Function],
-          },
-          "onStateChange": [Function],
-          "parentSub": undefined,
-          "store": Object {
-            "dispatch": [Function],
-            "getState": [Function],
-            "subscribe": [Function],
-          },
-          "unsubscribe": undefined,
-        },
+        "children": <form
+          className="landing-form"
+          onSubmit={[Function]}
+>
+          <header
+                    className="App-header"
+          >
+                    <h1
+                              className="App-title"
+                    >
+                              Scene-It
+                    </h1>
+                    <h5
+                              className="header-description"
+                    >
+                              Enter a location or check "use my location" to find out what's happening in your scene this week!
+                    </h5>
+          </header>
+          <div
+                    className="user-select"
+          >
+                    <input
+                              id="use-current-location"
+                              onChange={[Function]}
+                              type="checkbox"
+                    />
+                    <label
+                              htmlFor="use-current-location"
+                    >
+                              Use my current location
+                    </label>
+          </div>
+          <div
+                    className="query-info"
+          >
+                    <input
+                              id="locationName"
+                              onChange={[Function]}
+                              placeholder="location"
+                              value=""
+                    />
+                    <input
+                              id="keywords"
+                              onChange={[Function]}
+                              placeholder="keywords (optional)"
+                    />
+                    <button
+                              className="landing-submit"
+                              disabled={true}
+                    >
+                              Get Events
+                    </button>
+          </div>
+</form>,
+        "className": "landing-body",
       },
       "ref": null,
-      "rendered": null,
-      "type": [Function],
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <header
+              className="App-header"
+>
+              <h1
+                            className="App-title"
+              >
+                            Scene-It
+              </h1>
+              <h5
+                            className="header-description"
+              >
+                            Enter a location or check "use my location" to find out what's happening in your scene this week!
+              </h5>
+</header>,
+            <div
+              className="user-select"
+>
+              <input
+                            id="use-current-location"
+                            onChange={[Function]}
+                            type="checkbox"
+              />
+              <label
+                            htmlFor="use-current-location"
+              >
+                            Use my current location
+              </label>
+</div>,
+            <div
+              className="query-info"
+>
+              <input
+                            id="locationName"
+                            onChange={[Function]}
+                            placeholder="location"
+                            value=""
+              />
+              <input
+                            id="keywords"
+                            onChange={[Function]}
+                            placeholder="keywords (optional)"
+              />
+              <button
+                            className="landing-submit"
+                            disabled={true}
+              >
+                            Get Events
+              </button>
+</div>,
+          ],
+          "className": "landing-form",
+          "onSubmit": [Function],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <h1
+                  className="App-title"
+>
+                  Scene-It
+</h1>,
+                <h5
+                  className="header-description"
+>
+                  Enter a location or check "use my location" to find out what's happening in your scene this week!
+</h5>,
+              ],
+              "className": "App-header",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Scene-It",
+                  "className": "App-title",
+                },
+                "ref": null,
+                "rendered": "Scene-It",
+                "type": "h1",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Enter a location or check \\"use my location\\" to find out what's happening in your scene this week!",
+                  "className": "header-description",
+                },
+                "ref": null,
+                "rendered": "Enter a location or check \\"use my location\\" to find out what's happening in your scene this week!",
+                "type": "h5",
+              },
+            ],
+            "type": "header",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <input
+                  id="use-current-location"
+                  onChange={[Function]}
+                  type="checkbox"
+/>,
+                <label
+                  htmlFor="use-current-location"
+>
+                  Use my current location
+</label>,
+              ],
+              "className": "user-select",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "id": "use-current-location",
+                  "onChange": [Function],
+                  "type": "checkbox",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "input",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Use my current location",
+                  "htmlFor": "use-current-location",
+                },
+                "ref": null,
+                "rendered": "Use my current location",
+                "type": "label",
+              },
+            ],
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <input
+                  id="locationName"
+                  onChange={[Function]}
+                  placeholder="location"
+                  value=""
+/>,
+                <input
+                  id="keywords"
+                  onChange={[Function]}
+                  placeholder="keywords (optional)"
+/>,
+                <button
+                  className="landing-submit"
+                  disabled={true}
+>
+                  Get Events
+</button>,
+              ],
+              "className": "query-info",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "id": "locationName",
+                  "onChange": [Function],
+                  "placeholder": "location",
+                  "value": "",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "input",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "id": "keywords",
+                  "onChange": [Function],
+                  "placeholder": "keywords (optional)",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "input",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Get Events",
+                  "className": "landing-submit",
+                  "disabled": true,
+                },
+                "ref": null,
+                "rendered": "Get Events",
+                "type": "button",
+              },
+            ],
+            "type": "div",
+          },
+        ],
+        "type": "form",
+      },
+      "type": "div",
     },
   ],
   Symbol(enzyme.__options__): Object {
