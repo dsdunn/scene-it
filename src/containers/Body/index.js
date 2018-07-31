@@ -34,7 +34,6 @@ const Body = (props) => {
 
 export const mapStateToProps = (state) => ({
   events: state.events,
-  selectEvent: state.selectEvent,
   selectedEvent: state.selectedEvent
 })
 
