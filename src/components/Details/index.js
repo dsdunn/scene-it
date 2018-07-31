@@ -17,7 +17,7 @@ export const Details = ({selectedEvent}) => {
     venueUrl,
     image,
     description
-  } = selectedEvent || 'unavailable';
+  } = selectedEvent || '';
 
   const getBio = () => {
     if (performers) {
