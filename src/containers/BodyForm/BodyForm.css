@@ -22,7 +22,10 @@
 }
 
 .header .user-select {
+  display: flex;
+  align-items: center;
   text-align: left;
+  margin-bottom: 5px;
 }
 
 .header .query-info {
@@ -32,15 +35,15 @@
 
 .header .query-info input {
   width: 40%;
-  font-size: 1.1em;
+  height: 2vh;
+  font-size: 1em;
   margin-right: 2%;
-  height: 100%;
 }
 
 .header button {
   width: 20%;
-  font-family:'Open Sans';
-  font-weight: bold;
+  font-family: 'Roboto';
+  font-size: .9em;
 }
 
 .header .user-location {
