@@ -17,22 +17,6 @@ describe('events reducer', () => {
   })
 })
 
-describe('isLoading', () => {
-  it('should return false if state is undefined', () => {
-    const expected = false;
-    const actual = isLoading(undefined, {});
-
-    expect(actual).toEqual(expected);
-  })
-
-  it('should return expected boolean', () => {
-    const expected = true;
-    const actual = isLoading(false, actions.isLoading(true));
-
-    expect(actual).toEqual(expected);
-  })
-})
-
 describe('hasErrored', () => {
   it('should return false if state is undefined', () => {
     const expected = false;

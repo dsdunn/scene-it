@@ -71,7 +71,7 @@ class Map extends Component {
 
   render(){
     const { lat, lng } = this.state;
-    console.log('render', lat, lng)
+
     return lat ?
       <GoogleMap 
         zoom={10}
