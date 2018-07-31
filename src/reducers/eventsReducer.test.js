@@ -1,4 +1,4 @@
-import { events, isLoading, hasErrored } from './eventsReducer';
+import { events, selectedEvent, hasErrored } from './eventsReducer';
 import * as actions from '../actions';
 
 describe('events reducer', () => {
@@ -15,6 +15,31 @@ describe('events reducer', () => {
 
     expect(actual).toEqual(expected)
   })
+})
+
+describe('selectedEvent', () => {
+
+  it('should return null when state is undefined', () => {
+    const expected = null;
+    const actual = selectedEvent(undefined, {});
+
+    expect(actual).toEqual(expected);
+  })
+
+  it('should return an event when given action type SELECT_EVENT', () => {
+    const expected = {some: 'event'};
+    const actual = selectedEvent(undefined, {type: 'SELECT_EVENT', event: {some: 'event'}});
+
+    expect(actual).toEqual(expected);
+  })
+
+  it('should return null when given action type UNSELECT_EVENT', () => {
+    const expected = null;
+    const actual = selectedEvent(undefined, {type: 'UNSELECT_EVENT'});
+
+    expect(actual).toEqual(expected);
+  })
+
 })
 
 describe('hasErrored', () => {
