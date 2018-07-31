@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import { urlBuilder, reverseGeocode } from '../../helper';
 import { fetchEvents } from '../../thunks/fetchEvents';
 import { fetchLocation } from '../../thunks/fetchLocation';
@@ -54,10 +55,14 @@ export class BodyForm extends Component {
     }
   }
 
+  goHome = () => {
+    this.props.history.goBack();
+  }
+
   render(){
     return (
       <div className="header">
-        <span className="body-form-logo">Scene-It</span>
+        <span className="body-form-logo" onClick={this.goHome}><a href='#'>Scene-It</a></span>
         <form className="body-form" onSubmit={this.handleSubmit}>
           <div className ="user-select">
             <input type="checkbox" id="use-current-location" onChange={this.useCurrent}/>
@@ -87,4 +92,4 @@ const mapDispatchToProps = (dispatch) => ({
   setLocation: (location) => dispatch(locationFetchSuccess(location))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(BodyForm);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(BodyForm));
