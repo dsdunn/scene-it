@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import Body from './index';
 import { mapStateToProps, mapDispatchToProps } from './index';
 import { selectEvent } from '../../actions';
@@ -18,13 +18,19 @@ describe('Body', () => {
     expect(wrapper).toMatchSnapshot();
   })
 
+  it.skip('creates an eventList', () => {
+    let wrapper = shallow(<Body {...mockProps} />)
+
+    const actual = wrapper.instance().eventList()
+
+    expect(actual.length).toEqual(3);
+  })
+
   it.skip('renders an EventCard for every event', () => {
     let wrapper = shallow(<Body {...mockProps}/>)
     expect(wrapper.find(EventCard).length).toEqual(3)
   })
 })
-
-
 
 describe('mapStateToProps', () => {
   it('should return an object with events and a selected event', () => {

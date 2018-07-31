@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Body matches the snapshot 1`] = `
+exports[`BodyForm should match the snapshot 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Connect(Body)
+  Symbol(enzyme.__unrendered__): <Connect(LandingForm)
     store={
         Object {
             "dispatch": [Function],
@@ -25,15 +25,13 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "class",
     "props": Object {
-      "events": Array [
-        "one",
-        "two",
-        "three",
-      ],
-      "selectEvent": [Function],
-      "selectedEvent": Object {
-        "eventId": 1,
+      "fetchEvents": [Function],
+      "fetchLocation": [Function],
+      "location": Object {
+        "lat": 1,
+        "lng": 2,
       },
+      "setLocation": [Function],
       "store": Object {
         "dispatch": [Function],
         "getState": [Function],
@@ -66,15 +64,13 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "class",
       "props": Object {
-        "events": Array [
-          "one",
-          "two",
-          "three",
-        ],
-        "selectEvent": [Function],
-        "selectedEvent": Object {
-          "eventId": 1,
+        "fetchEvents": [Function],
+        "fetchLocation": [Function],
+        "location": Object {
+          "lat": 1,
+          "lng": 2,
         },
+        "setLocation": [Function],
         "store": Object {
           "dispatch": [Function],
           "getState": [Function],
