@@ -71,10 +71,10 @@ class Map extends Component {
 
   render(){
     const { lat, lng } = this.state;
-    console.log('render', lat, lng)
+
     return lat ?
       <GoogleMap 
-        defaultZoom={10}
+        zoom={10}
         center={{lat, lng}}
       >
         {this.markers()}

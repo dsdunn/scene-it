@@ -42,23 +42,70 @@
   color: #fffcf9;
 }
 
+.landing-form .user-select {
+  display: flex;
+  justify-content: center;
+  width: 35%;
+  margin: auto;
+}
+
+.user-select:hover {
+  text-shadow: 0 0 0.6em #FF9500;
+}
+
+
 .landing-form .query-info {
   display: flex;
   flex-direction: column;
   width: 50%;
+  min-width: 300px;
   margin: 4% auto 4% auto;
   height: 20%;
 }
 
-.landing-form .query-info input, button {
+.user-location {
+  margin: 0 auto 1% 2%;
+  font-size: 1.1em;
+  text-align: left;
+}
+
+.landing-form .query-info input,
+.landing-form button{
   height: 3vh;
   margin: 2%;
   font-family: 'Roboto';
   font-size: .9em;
 }
 
-.user-location {
-  margin: 2%;
-  font-size: 1.2em;
-  font-weight: bold;
+.landing-form button {
+  width: 30%;
+  min-width: 100px;
+  margin: 2% auto 2% auto;
+  border-radius: 4px 4px;
+  box-shadow: 0 0 0.3em #FF9900;
 }
+
+.landing-submit:disabled {
+  font-style: italic;
+  color: lightgray;
+  box-shadow: none;
+}
+
+.landing-submit:hover:enabled {
+  color:#261b16;
+  background-color: #f3c225;
+  box-shadow: 0 0 1em #FF9900;
+}
+
+.loading {
+  height: 1.4em;
+  width: 1.4em;
+  margin: auto;
+}
+
+.landing-form .loading{
+  padding: 3%;
+}
+
+
+

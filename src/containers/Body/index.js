@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { EventCard } from '../../components/EventCard';
 import  Map  from '../MapDiv';
@@ -8,16 +8,16 @@ import { selectEvent } from '../../actions';
 import { Details } from '../../components/Details';
 import BodyForm from '../BodyForm';
 
-const Body = (props) => {
+export const Body = (props) => {
 
-  const eventList = () => props.events.map((event, index) => <EventCard event={event} selectEvent={props.selectEvent} selectedEvent={props.selectedEvent} label={index} />)
-
+  const eventList = () => this.props.events.map((event, index) => <EventCard event={event} selectEvent={this.props.selectEvent} selectedEvent={this.props.selectedEvent} label={index} />)
+  
   return (
     <div className="main-body">
       <BodyForm/>
       <div className="map-div">
         <div className="event-list">
-          {eventList()}
+          {this.eventList()}
         </div>
         <Map 
           isMarkerShown
@@ -27,14 +27,13 @@ const Body = (props) => {
           mapElement={<div style={{ height: `100%` }} />}
         />
       </div>
-      <Details selectedEvent={props.selectedEvent}/>
+      <Details selectedEvent={this.props.selectedEvent}/>
     </div>
   );
 }
 
 export const mapStateToProps = (state) => ({
   events: state.events,
-  selectEvent: state.selectEvent,
   selectedEvent: state.selectedEvent
 })
 

@@ -1,0 +1,867 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Details should match the snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Unknown
+    selectedEvent="someEvent"
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <img
+          src=""
+/>,
+        <div
+          className="details-header"
+>
+          <div
+                    className="details-header-left"
+          >
+                    <h1
+                              className="details-title"
+                    />
+                    <p
+                              className="details-genre"
+                    />
+                    <t
+                              ago={false}
+                              calendar={false}
+                              className="details-start-time"
+                              date={undefined}
+                              decimal={false}
+                              element="time"
+                              filter={[Function]}
+                              format="dddd, MMMM Do YYYY, hA"
+                              fromNow={false}
+                              interval={60000}
+                              onChange={[Function]}
+                              toNow={false}
+                              unit={null}
+                              unix={false}
+                              utc={false}
+                    />
+                    <p
+                              className="event-url"
+                    >
+                              <a
+                                        href={undefined}
+                                        target="_blank"
+                              >
+                                        get tickets
+                              </a>
+                    </p>
+          </div>
+          <div
+                    className="details-header-right"
+          >
+                    <h2
+                              className="details-venue"
+                    >
+                              <a
+                                        href={undefined}
+                                        target="_blank"
+                              />
+                    </h2>
+                    <div
+                              className="address"
+                    >
+                              <p />
+                              <p>
+                                        , 
+                                         
+                              </p>
+                    </div>
+          </div>
+</div>,
+        <p
+          className="details-description"
+          dangerouslySetInnerHTML={
+                    Object {
+                              "__html": undefined,
+                            }
+          }
+/>,
+      ],
+      "className": "details",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "src": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "img",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <div
+              className="details-header-left"
+>
+              <h1
+                            className="details-title"
+              />
+              <p
+                            className="details-genre"
+              />
+              <t
+                            ago={false}
+                            calendar={false}
+                            className="details-start-time"
+                            date={undefined}
+                            decimal={false}
+                            element="time"
+                            filter={[Function]}
+                            format="dddd, MMMM Do YYYY, hA"
+                            fromNow={false}
+                            interval={60000}
+                            onChange={[Function]}
+                            toNow={false}
+                            unit={null}
+                            unix={false}
+                            utc={false}
+              />
+              <p
+                            className="event-url"
+              >
+                            <a
+                                          href={undefined}
+                                          target="_blank"
+                            >
+                                          get tickets
+                            </a>
+              </p>
+</div>,
+            <div
+              className="details-header-right"
+>
+              <h2
+                            className="details-venue"
+              >
+                            <a
+                                          href={undefined}
+                                          target="_blank"
+                            />
+              </h2>
+              <div
+                            className="address"
+              >
+                            <p />
+                            <p>
+                                          , 
+                                           
+                            </p>
+              </div>
+</div>,
+          ],
+          "className": "details-header",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <h1
+                  className="details-title"
+/>,
+                <p
+                  className="details-genre"
+/>,
+                <t
+                  ago={false}
+                  calendar={false}
+                  className="details-start-time"
+                  date={undefined}
+                  decimal={false}
+                  element="time"
+                  filter={[Function]}
+                  format="dddd, MMMM Do YYYY, hA"
+                  fromNow={false}
+                  interval={60000}
+                  onChange={[Function]}
+                  toNow={false}
+                  unit={null}
+                  unix={false}
+                  utc={false}
+/>,
+                <p
+                  className="event-url"
+>
+                  <a
+                                    href={undefined}
+                                    target="_blank"
+                  >
+                                    get tickets
+                  </a>
+</p>,
+              ],
+              "className": "details-header-left",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": undefined,
+                  "className": "details-title",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "h1",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": undefined,
+                  "className": "details-genre",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "p",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "ago": false,
+                  "calendar": false,
+                  "className": "details-start-time",
+                  "date": undefined,
+                  "decimal": false,
+                  "element": "time",
+                  "filter": [Function],
+                  "format": "dddd, MMMM Do YYYY, hA",
+                  "fromNow": false,
+                  "interval": 60000,
+                  "onChange": [Function],
+                  "toNow": false,
+                  "unit": null,
+                  "unix": false,
+                  "utc": false,
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <a
+                    href={undefined}
+                    target="_blank"
+>
+                    get tickets
+</a>,
+                  "className": "event-url",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "get tickets",
+                    "href": undefined,
+                    "target": "_blank",
+                  },
+                  "ref": null,
+                  "rendered": "get tickets",
+                  "type": "a",
+                },
+                "type": "p",
+              },
+            ],
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <h2
+                  className="details-venue"
+>
+                  <a
+                                    href={undefined}
+                                    target="_blank"
+                  />
+</h2>,
+                <div
+                  className="address"
+>
+                  <p />
+                  <p>
+                                    , 
+                                     
+                  </p>
+</div>,
+              ],
+              "className": "details-header-right",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": <a
+                    href={undefined}
+                    target="_blank"
+/>,
+                  "className": "details-venue",
+                },
+                "ref": null,
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": undefined,
+                    "href": undefined,
+                    "target": "_blank",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "a",
+                },
+                "type": "h2",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <p />,
+                    <p>
+                      , 
+                       
+</p>,
+                  ],
+                  "className": "address",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": undefined,
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "p",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        undefined,
+                        ", ",
+                        undefined,
+                        " ",
+                        undefined,
+                      ],
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      undefined,
+                      ", ",
+                      undefined,
+                      " ",
+                      undefined,
+                    ],
+                    "type": "p",
+                  },
+                ],
+                "type": "div",
+              },
+            ],
+            "type": "div",
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "className": "details-description",
+          "dangerouslySetInnerHTML": Object {
+            "__html": undefined,
+          },
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "p",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <img
+            src=""
+/>,
+          <div
+            className="details-header"
+>
+            <div
+                        className="details-header-left"
+            >
+                        <h1
+                                    className="details-title"
+                        />
+                        <p
+                                    className="details-genre"
+                        />
+                        <t
+                                    ago={false}
+                                    calendar={false}
+                                    className="details-start-time"
+                                    date={undefined}
+                                    decimal={false}
+                                    element="time"
+                                    filter={[Function]}
+                                    format="dddd, MMMM Do YYYY, hA"
+                                    fromNow={false}
+                                    interval={60000}
+                                    onChange={[Function]}
+                                    toNow={false}
+                                    unit={null}
+                                    unix={false}
+                                    utc={false}
+                        />
+                        <p
+                                    className="event-url"
+                        >
+                                    <a
+                                                href={undefined}
+                                                target="_blank"
+                                    >
+                                                get tickets
+                                    </a>
+                        </p>
+            </div>
+            <div
+                        className="details-header-right"
+            >
+                        <h2
+                                    className="details-venue"
+                        >
+                                    <a
+                                                href={undefined}
+                                                target="_blank"
+                                    />
+                        </h2>
+                        <div
+                                    className="address"
+                        >
+                                    <p />
+                                    <p>
+                                                , 
+                                                 
+                                    </p>
+                        </div>
+            </div>
+</div>,
+          <p
+            className="details-description"
+            dangerouslySetInnerHTML={
+                        Object {
+                                    "__html": undefined,
+                                  }
+            }
+/>,
+        ],
+        "className": "details",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "src": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "img",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <div
+                className="details-header-left"
+>
+                <h1
+                                className="details-title"
+                />
+                <p
+                                className="details-genre"
+                />
+                <t
+                                ago={false}
+                                calendar={false}
+                                className="details-start-time"
+                                date={undefined}
+                                decimal={false}
+                                element="time"
+                                filter={[Function]}
+                                format="dddd, MMMM Do YYYY, hA"
+                                fromNow={false}
+                                interval={60000}
+                                onChange={[Function]}
+                                toNow={false}
+                                unit={null}
+                                unix={false}
+                                utc={false}
+                />
+                <p
+                                className="event-url"
+                >
+                                <a
+                                                href={undefined}
+                                                target="_blank"
+                                >
+                                                get tickets
+                                </a>
+                </p>
+</div>,
+              <div
+                className="details-header-right"
+>
+                <h2
+                                className="details-venue"
+                >
+                                <a
+                                                href={undefined}
+                                                target="_blank"
+                                />
+                </h2>
+                <div
+                                className="address"
+                >
+                                <p />
+                                <p>
+                                                , 
+                                                 
+                                </p>
+                </div>
+</div>,
+            ],
+            "className": "details-header",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <h1
+                    className="details-title"
+/>,
+                  <p
+                    className="details-genre"
+/>,
+                  <t
+                    ago={false}
+                    calendar={false}
+                    className="details-start-time"
+                    date={undefined}
+                    decimal={false}
+                    element="time"
+                    filter={[Function]}
+                    format="dddd, MMMM Do YYYY, hA"
+                    fromNow={false}
+                    interval={60000}
+                    onChange={[Function]}
+                    toNow={false}
+                    unit={null}
+                    unix={false}
+                    utc={false}
+/>,
+                  <p
+                    className="event-url"
+>
+                    <a
+                                        href={undefined}
+                                        target="_blank"
+                    >
+                                        get tickets
+                    </a>
+</p>,
+                ],
+                "className": "details-header-left",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": undefined,
+                    "className": "details-title",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "h1",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": undefined,
+                    "className": "details-genre",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": "p",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "ago": false,
+                    "calendar": false,
+                    "className": "details-start-time",
+                    "date": undefined,
+                    "decimal": false,
+                    "element": "time",
+                    "filter": [Function],
+                    "format": "dddd, MMMM Do YYYY, hA",
+                    "fromNow": false,
+                    "interval": 60000,
+                    "onChange": [Function],
+                    "toNow": false,
+                    "unit": null,
+                    "unix": false,
+                    "utc": false,
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <a
+                      href={undefined}
+                      target="_blank"
+>
+                      get tickets
+</a>,
+                    "className": "event-url",
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": "get tickets",
+                      "href": undefined,
+                      "target": "_blank",
+                    },
+                    "ref": null,
+                    "rendered": "get tickets",
+                    "type": "a",
+                  },
+                  "type": "p",
+                },
+              ],
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <h2
+                    className="details-venue"
+>
+                    <a
+                                        href={undefined}
+                                        target="_blank"
+                    />
+</h2>,
+                  <div
+                    className="address"
+>
+                    <p />
+                    <p>
+                                        , 
+                                         
+                    </p>
+</div>,
+                ],
+                "className": "details-header-right",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": <a
+                      href={undefined}
+                      target="_blank"
+/>,
+                    "className": "details-venue",
+                  },
+                  "ref": null,
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": undefined,
+                      "href": undefined,
+                      "target": "_blank",
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": "a",
+                  },
+                  "type": "h2",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      <p />,
+                      <p>
+                        , 
+                         
+</p>,
+                    ],
+                    "className": "address",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": undefined,
+                      },
+                      "ref": null,
+                      "rendered": null,
+                      "type": "p",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          undefined,
+                          ", ",
+                          undefined,
+                          " ",
+                          undefined,
+                        ],
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        undefined,
+                        ", ",
+                        undefined,
+                        " ",
+                        undefined,
+                      ],
+                      "type": "p",
+                    },
+                  ],
+                  "type": "div",
+                },
+              ],
+              "type": "div",
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "details-description",
+            "dangerouslySetInnerHTML": Object {
+              "__html": undefined,
+            },
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "p",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

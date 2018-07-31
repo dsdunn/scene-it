@@ -17,7 +17,7 @@ export const Details = ({selectedEvent}) => {
     venueUrl,
     image,
     description
-  } = selectedEvent || 'unavailable';
+  } = selectedEvent || '';
 
   const getBio = () => {
     if (performers) {
@@ -51,7 +51,7 @@ export const Details = ({selectedEvent}) => {
             </h2>
             <div className="address">
               <p>{address}</p>
-              <p>{region}, {postalCode}</p>
+              <p>{cityName}, {region} {postalCode}</p>
             </div>
           </div>
         </div>  
