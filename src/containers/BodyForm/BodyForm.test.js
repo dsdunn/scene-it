@@ -5,10 +5,9 @@ import { mapStateToProps, mapDispatchToProps } from './index';
 import { locationFetchSuccess } from '../../actions';
 import { fetchEvents} from '../../thunks/fetchEvents';
 import { fetchLocation } from '../../thunks/fetchLocation';
-// import { reverseGeocode } from '../../helper';
+import { reverseGeocode } from '../../helper';
 
-
-
+jest.mock('../../helper')
 jest.mock('../../thunks/fetchEvents')
 jest.mock('../../thunks/fetchLocation')
 
@@ -34,12 +33,11 @@ describe('BodyForm', () => {
     history: {goBack: mockGoBack}
   }
 
-  // const mockGeolocation = {
-  //   getCurrentPosition: jest.fn().mockImplementation((callback) => {
-  //     return callback({coords: {latitude: 1, longitude:2}})
-  //   })
-  // }
-  const mockGeolocation = {getCurrentPosition: jest.fn()};
+  const mockGeolocation = {
+    getCurrentPosition: jest.fn().mockImplementation((callback) => {
+      return callback({coords: {latitude: 1, longitude:2}})
+    })
+  }
 
   let wrapper;
 
@@ -99,15 +97,13 @@ describe('BodyForm', () => {
     expect(wrapper.state('useCurrent')).toEqual(true);
   })
 
-  it.skip('should call mockSetLocation when useCurrent is called', async () => {
+  it('should call mockSetLocation when useCurrent is called', async () => {
     global.navigator.geolocation = mockGeolocation;
     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
       ok: true,
       json: () => Promise.resolve({results:[{address_components:[{types:['locality'],short_name:'JesusH!'}]}]})
       })
     )
-
-    // reverseGeocode = jest.fn().mockImplementation(() => 'Texas');
 
     await wrapper.instance().useCurrent(mockEvent)
     expect(mockSetLocation).toBeCalled()

@@ -5,8 +5,13 @@ import { mapStateToProps, mapDispatchToProps } from './index';
 import { fetchEvents } from '../../thunks/fetchEvents';
 import { fetchLocation } from '../../thunks/fetchLocation';
 import { locationFetchSuccess } from '../../actions';
+import { reverseGeolocation } from '../../helper';
 
-describe('BodyForm', () => {
+jest.mock('../../helper')
+jest.mock('../../thunks/fetchEvents')
+jest.mock('../../thunks/fetchLocation')
+
+describe('LandingForm', () => {
 
   const mockFetchEvents = jest.fn().mockImplementation(() => Promise.resolve({status: 'ok'}));
   const mockFetchLocation = jest.fn().mockImplementation(() => Promise.resolve({status: 'ok'}));
@@ -25,7 +30,11 @@ describe('BodyForm', () => {
     history: []
   }
 
-  const mockGeolocation = {getCurrentPosition: jest.fn()};
+  const mockGeolocation = {
+    getCurrentPosition: jest.fn().mockImplementation((callback) => {
+      return callback({coords: {latitude: 1, longitude:2}})
+    })
+  }
 
   let wrapper;
 
@@ -83,6 +92,18 @@ describe('BodyForm', () => {
     global.navigator.geolocation = mockGeolocation;
     wrapper.instance().useCurrent(mockEvent);
     expect(wrapper.state('useCurrent')).toEqual(true);
+  })
+
+  it('should call mockSetLocation when useCurrent is called', async () => {
+    global.navigator.geolocation = mockGeolocation;
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      ok: true,
+      json: () => Promise.resolve({results:[{address_components:[{types:['locality'],short_name:'JesusH!'}]}]})
+      })
+    )
+
+    await wrapper.instance().useCurrent(mockEvent)
+    expect(mockSetLocation).toBeCalled()
   })
 
 })

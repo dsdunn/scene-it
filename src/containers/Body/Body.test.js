@@ -4,6 +4,7 @@ import { Body } from './index';
 import { mapStateToProps, mapDispatchToProps } from './index';
 import { selectEvent } from '../../actions';
 
+
 describe('Body', () => {
 
   const mockProps = {
