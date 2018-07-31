@@ -88,13 +88,13 @@ export class Map extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({
+export const mapStateToProps = (state) => ({
   center: state.location,
   events: state.events,
   selectedEvent: state.selectedEvent
 })
 
-const mapDispatchToProps = (dispatch) => ({
+export const mapDispatchToProps = (dispatch) => ({
   selectEvent: (id) => dispatch(selectEvent(id)),
   unselectEvent: () => dispatch(unselectEvent())
 })

@@ -12,9 +12,11 @@ ShallowWrapper {
           }
     }
     events={Array []}
+    selectEvent={[Function]}
     selectedEvent={
         Object {
-            "some": "event",
+            "eventId": 1,
+            "title": "cool event",
           }
     }
 />,
